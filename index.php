@@ -7,11 +7,19 @@ if (isset($_GET["rubrique"])){
             //echo "historique";
             header("location:View/templates/historique.php");
             //echo "<meta http-equiv='refresh' content='0; url=View/historique.php'>";
-        break;
+            break;
+
+        case "organigramme":
+                header("location:View/templates/organigramme.php");
+                break;    
 
         default:
-        echo "<meta http-equiv='refresh' content='0; url=View/templates/homepage.php'>";
+            header("location:View/templates/homepage.php");
+            //echo "<meta http-equiv='refresh' content='0; url=View/templates/homepage.php'>";
             //require('templates/homepage.php');
+        break;
+        
+
     }
     
 }
