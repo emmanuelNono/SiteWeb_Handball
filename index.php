@@ -1,7 +1,10 @@
 <?php
+session_start();
 include_once('Controller/ClubController.php');
+include_once('Controller/ArticleController.php');
 
 use Controller\ClubController;
+use Controller\ArticleController;
 
 if (isset($_GET["rubrique"])){
     $rubrique = strtolower($_GET["rubrique"]);
@@ -14,7 +17,9 @@ if (isset($_GET["rubrique"])){
         case "organigramme":
             ClubController::afficherOrganigramme($_GET);
             break;    
-
+        case "news":
+            ArticleController::AfficherArticlesActifs($_GET); 
+            break;
         default:
             ClubController::afficherHomePage($_GET);
             break;
