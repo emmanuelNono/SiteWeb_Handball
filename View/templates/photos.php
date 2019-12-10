@@ -1,5 +1,5 @@
-<?php include('../includes/head.php'); ?>
-    <?php include('../includes/header.php'); ?>
+<?php include('includes/head.php'); ?>
+    <?php include('includes/header.php'); ?>
     <div class="container">
     <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-3" >
@@ -28,4 +28,4 @@
             </div>
         </div>
     </div>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

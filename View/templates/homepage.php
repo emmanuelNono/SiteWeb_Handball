@@ -2,33 +2,11 @@
 <?php include('includes/header.php'); ?>
     <div class="container">
         <div class="row">
-           <div class="col-sm-12 col-md-12 col-lg-12">
-               <p>
-               Lorem Elsass ipsum knack Chulia Roberstau knepfle schneck purus sit kuglopf wie Christkindelsmärik non bredele risus, eleifend turpis sed Morbi Strasbourg placerat quam.
-               </p>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <p>Citation : </p>
-                <blockquote class="blockquote">
-                <p class="mb-0">geht's und flammekueche Salu bissame salu suspendisse condimentum consectetur kougelhopf Miss Dahlias Spätzle id chambon dignissim rucksack elementum</p>
-                <footer class="blockquote-footer">Un alsacien du <cite>Strossburi Mag</cite></footer> 
-                </blockquote>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <p>Voici une liste : </p>
-                <ul>
-                    <li>Hey</li>
-                    <li>Ho</li>
-                    <li>Hou</li>
-                    <li>HAbou</li>
-                </ul>
-            </div>
-            <div class="col-sm-6 col-md-8 col-lg-9">
-                <img src="http://placehold.it/400x150" class="img-fluid">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+            <script>if(!window._rsz){window._rsz=function(){var i=iFrameResize({checkOrigin:false,interval:100});};if(document.readyState!="loading"){_rsz()}else{document.addEventListener("DOMContentLoaded",_rsz)}}</script>
+            <iframe id="5dee118c4f585930c9f128cb" src="https://scorenco.com/widget/5dee118c4f585930c9f128cb/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+            <a style="font-size:11px" target="_blank" href="https://scorenco.com/hand/clubs/hbc-kingersheim/">HBC Kingersheim sur Score'n'co</a>
             </div>
         </div>
     </div>

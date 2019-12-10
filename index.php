@@ -7,6 +7,10 @@ if (isset($_GET["rubrique"])){
     $rubrique = strtolower($_GET["rubrique"]);
     switch($rubrique)
     {
+        case "photos":
+            ClubController::afficherPhotos($_GET);
+            break; 
+
         case "historique":
             ClubController::afficherHistorique($_GET);
             break;
