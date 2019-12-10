@@ -1,4 +1,5 @@
-CREATE DATABASE db_hbck;
+CREATE DATABASE db_hbck CHARACTER SET utf8
+  COLLATE utf8_general_ci;
 
 USE db_hbck;
 
