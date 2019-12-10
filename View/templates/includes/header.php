@@ -21,6 +21,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../../index.php?rubrique=historique">Historique</a>
                     <a class="dropdown-item" href="../../index.php?rubrique=organigramme">Organigrame</a>
+                    <a class="dropdown-item" href="../../index.php?rubrique=news">Les news</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                     </div>
