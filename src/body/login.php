@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+if (isset($_GET["mes"]))
+{
+    if ($_GET["mes"] == "pasDeDroit")
+    {
+        echo "Désolé, vous n'avez pas accès à la zone d'administration";
+    }
+    else
+    {
+        // pas dans la base
+        echo "Désolé, vous n'êtes pas un utilisateur authentifié.";
+    }
+}
+?>
+
 <form action="authentification.php" method="post">
     <div class="form-group">
         <label for="Login">Identifiant : </label>

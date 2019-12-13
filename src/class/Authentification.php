@@ -1,16 +1,24 @@
 <?php
-
+session_start();
 
 class Authentification
 {
     public function verificationUtilisateur($db, $user, $mdp)
     {
-        $sql_selection = $db->prepare("SELECT * FROM personne where per_email =:login and per_mdp = :mdp");
-        $sql_selection = $db->bindParam(':login', $user);
-        $sql_selection = $db->bindParam(':mdp' , $mdp);
-        $rs_selection = $db->execute($sql_selection);
-        //var_dump($rs_selection);
-        //exit;
-        return $rs_selection;
+        $o_rp = $db->prepare("SELECT per_id, per_prenom, per_admin FROM personne where per_mail =:login and per_mdp =:mdp");
+        $o_rp->bindParam(':login', $user);
+        $o_rp->bindParam(':mdp' , $mdp);
+
+        if ($o_rp->execute())
+        {
+            while ($row = $o_rp->fetchall())
+            {
+                return $row;
+            }
+        }
+        else {
+            // utilisateur inconnu
+            header("location:login.php?mes=error");
+        }
     }
 }
