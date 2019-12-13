@@ -127,7 +127,7 @@ CREATE TABLE `lien_per_fon_equ`
   `lpfe_fon_id` int
 (11) NOT NULL,
   `lpfe_equ_id` int
-(11) NOT NULL,
+(11) ,
   `lpfe_created_at` datetime NOT NULL,
   `lpfe_updated_at` datetime DEFAULT NULL,
   `lpfe_deleted_at` datetime DEFAULT NULL
