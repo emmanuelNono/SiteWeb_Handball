@@ -56,6 +56,25 @@ CREATE TABLE `article`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `dde_accompagnant`
+--
+
+CREATE TABLE `dde_accompagnant`
+(
+  `dda_id` int
+(11) NOT NULL,
+  `dda_lib` text NOT NULL,
+  `dda_actif` int
+(1) NOT NULL DEFAULT '0',
+  `dda_created_at` datetime NOT NULL,
+  `dda_updated_at` datetime DEFAULT NULL,
+  `dda_deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `equipe`
 --
 
