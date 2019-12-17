@@ -14,6 +14,8 @@ $personnes = $o_pers->getPersonnesActives($o_conn);
 
 $pers = $personnes->fetchall();
 
+include('../includes/head.php');
+include('../includes/header.php');
 ?>
 <a href="personne-details.php?mode=nouveau">
     <button type="submit">Ajout d'une personne</button>
@@ -66,3 +68,7 @@ $pers = $personnes->fetchall();
         </tr>
     <?php } ?>
 </table>
+
+<?php 
+include('../includes/footer.php');
+?>

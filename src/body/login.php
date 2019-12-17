@@ -15,7 +15,7 @@ if (isset($_GET["mes"]))
 }
 
 include('../includes/head.php');
-include('../includes/header.php')
+include('../includes/header.php');
 ?>
 
 <form action="../traitements/trt-authentification.php" method="post">
