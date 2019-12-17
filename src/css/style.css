@@ -5,11 +5,22 @@
 }
 
 #spaceheader{
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 /* BODY */
 
+.container-home {
+    margin-bottom: 3rem;
+}
+
+#iconResult {
+    padding: 2rem;
+}
+
+#cardProchainsMatchs .nav-link {
+    color: black;
+}
 
 /* FOOTER */
 
