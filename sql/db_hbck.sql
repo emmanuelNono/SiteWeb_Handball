@@ -173,18 +173,15 @@ CREATE TABLE `personne`
 -- Structure de la table `photo`
 --
 
-CREATE TABLE `photo`
-(
-  `pho_id` int
-(11) NOT NULL,
-  `pho_link` varchar
-(255) NOT NULL,
-  `pho_libelle` varchar
-(255) NOT NULL,
+CREATE TABLE `photo` (
+  `pho_id` int(11) NOT NULL,
+  `pho_nom` varchar(255) NOT NULL,
+  `pho_album` varchar(255) NOT NULL,
   `pho_created_at` datetime NOT NULL,
   `pho_updated_at` datetime DEFAULT NULL,
   `pho_deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
