@@ -4,7 +4,7 @@ include('../includes/header.php')
 ?>
 
 <div class="row justify-content-center" style="margin-bottom: 200px;">
-    Page d'accueil
+    Résultats de notre club
 </div>
 
 <?php
