@@ -1,6 +1,16 @@
 <?php
+require_once '../includes/Database.php';
+require_once '../class/ArticleBase.php';
+
+// connexion à la base
+$o_pdo = new Database();
+$o_conn = $o_pdo->makeConnect();
+
+$articles = new ArticleBase();
+$derniersArticles = $articles->get3DerniersArticles($o_conn);
+
 include('../includes/head.php');
-include('../includes/header.php')
+include('../includes/header.php');
 ?>
 
 <div class="container container-home">
@@ -14,23 +24,36 @@ include('../includes/header.php')
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <?php $photo1 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[0]['art_photo_id']) ?>
+                        <img src="../../resources/galerie/<?php echo $photo1[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2 class="mb-0"><?php echo $derniersArticles[0]['art_titre'] ?></h2>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <?php $photo2 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[1]['art_photo_id']) ?>
+                        <img src="../../resources/galerie/<?php echo $photo2[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2><?php echo $derniersArticles[1]['art_titre'] ?></h2>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <?php $photo3 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[2]['art_photo_id']) ?>
+                        <img src="../../resources/galerie/<?php echo $photo3[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2 class="mb-0"><?php echo $derniersArticles[2]['art_titre'] ?></h2>
+                        </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselArticles" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselArticles" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+
                 </div>
-                <a class="carousel-control-prev" href="#carouselArticles" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Précédent</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselArticles" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Suivant</span>
-                </a>
             </div>
         </div>
     </div>
@@ -191,5 +214,5 @@ include('../includes/header.php')
 </div>
 
 <?php
-include('../includes/footer.php');
+                                                            include('../includes/footer.php');
 ?>

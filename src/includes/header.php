@@ -1,6 +1,6 @@
 <header>
     <div id="container-navbar">
-        <nav id="navbarAdmin" class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+        <nav id="navbarAdmin" class="navbar navbar-expand-lg navbar-light fixed-top">
             <span class="navbar-brand" href="#">Administration</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
