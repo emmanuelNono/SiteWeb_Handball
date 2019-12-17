@@ -31,7 +31,7 @@
                         Résultats
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Club</a>
+                        <a class="dropdown-item" href="../body/club.php">Club</a>
                         <a class="dropdown-item" href="#">Equipes</a>
                     </div>
                 </li>
@@ -45,7 +45,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Nous contacter</a>
                         <a class="dropdown-item" href="#">à propos</a>
-                        <a class="dropdown-item" href="#">Accès administration</a>
+                        <a class="dropdown-item" href="../body/login.php">Accès administration</a>
                     </div>
                 </li>
         </div>
