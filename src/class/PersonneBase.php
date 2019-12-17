@@ -10,13 +10,9 @@ class PersonneBase
     }
 
     public function getPersonne($db,$id){
-        //$sql_p = "SELECT * FROM personne where per_id=" . $id;
         $o_rp = $db->prepare("SELECT * FROM personne where per_id = :id");
         $o_rp->bindParam(':id',$id);
         $o_rp->execute();
-        //$rs_p = $db->query($sql_p);
-        //$rs_p = $o_rp->fetchall();
-        //return $rs_p;
 
         if ($o_rp->execute())
         {
