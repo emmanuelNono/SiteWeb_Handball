@@ -184,8 +184,8 @@ INSERT INTO `personne` (`per_id`, `per_nom`, `per_prenom`, `per_date_nais`, `per
 
 CREATE TABLE `photo` (
   `pho_id` int(11) NOT NULL,
-  `pho_link` varchar(255) NOT NULL,
-  `pho_libelle` varchar(255) NOT NULL,
+  `pho_nom` varchar(255) NOT NULL,
+  `pho_album` varchar(255) NOT NULL,
   `pho_created_at` datetime NOT NULL,
   `pho_updated_at` datetime DEFAULT NULL,
   `pho_deleted_at` datetime DEFAULT NULL
@@ -195,8 +195,8 @@ CREATE TABLE `photo` (
 -- Déchargement des données de la table `photo`
 --
 
-INSERT INTO `photo` (`pho_id`, `pho_link`, `pho_libelle`, `pho_created_at`, `pho_updated_at`, `pho_deleted_at`) VALUES
-(1, 'toto.jpg', 'Illustration', '2019-12-13 19:22:57', NULL, NULL);
+INSERT INTO `photo` (`pho_id`, `pho_nom`, `pho_album`, `pho_created_at`, `pho_updated_at`, `pho_deleted_at`) VALUES
+(1, 'toto.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL);
 
 -- --------------------------------------------------------
 

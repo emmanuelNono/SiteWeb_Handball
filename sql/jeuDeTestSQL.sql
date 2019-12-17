@@ -48,5 +48,5 @@ INSERT INTO lien_per_fon_equ (lpfe_id, lpfe_per_id, lpfe_fon_id, lpfe_equ_id, lp
 null, 1,2,null, now(), null, null);
 
 -- table photo
-INSERT INTO photo (pho_id, pho_link, pho_libelle, pho_created_at, pho_updated_at, pho_deleted_at) VALUES (
-null, "toto.jpg", "Illustration", now(), null, null);
+INSERT INTO photo (pho_id, pho_nom, pho_album, pho_created_at, pho_updated_at, pho_deleted_at) VALUES (
+null, "toto.jpg", "Equipe1", now(), null, null);
