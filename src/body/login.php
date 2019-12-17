@@ -15,7 +15,7 @@ if (isset($_GET["mes"]))
 }
 ?>
 
-<form action="authentification.php" method="post">
+<form action="../traitements/trt-authentification.php" method="post">
     <div class="form-group">
         <label for="Login">Identifiant : </label>
         <input type="text" name="login" id="login" class="form-control">
