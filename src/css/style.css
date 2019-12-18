@@ -16,6 +16,8 @@
 
 /* BODY */
 
+/* accueil */
+
 .container-home {
     margin-bottom: 3rem;
 }
@@ -41,6 +43,12 @@
 
 #cardProchainsMatchs .nav-link {
     color: black;
+}
+
+/* Gestion personne */
+
+#listePersonne thead {
+    text-align: center;
 }
 
 /* FOOTER */
