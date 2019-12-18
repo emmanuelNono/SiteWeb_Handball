@@ -12,66 +12,100 @@ if ($_GET["mode"] == "modif"){
     $id = $_GET["id"];
     $pb = new PersonneBase();
     $pers = $pb->getPersonne($o_conn, $id);
-    // $p = $pers->fetch();
-    //var_dump($pers);
+
+    foreach($pers as $p){
+        $per_id = $p["per_id"];
+        $per_prenom = $p["per_prenom"];
+        $per_nom = $p["per_nom"];
+        $per_sexe = $p["per_sexe"];
+        $per_mdp = $p["per_mdp"];
+        $per_date_nais = $p["per_date_nais"];
+        $per_lieu_nais = $p["per_lieu_nais"];
+        $per_admin = $p["per_admin"];
+        $per_redac = $p["per_redac"];
+        $per_contact_ext = $p["per_contact_ext"];
+
+    }
+    $pb = null;
+    $pers = null;
+
 }
 
+else{
+    if ($_GET["mode"] == "nouveau") {
+        $pers = array();
+        $per_prenom = "";
+        $per_nom = "";
+        $per_date_nais = "";
+        $per_lieu_nais = "";
+        $per_sexe = "";
+        $per_mdp = "";
+        $per_admin  = "";
+        $per_redac = "";
+        $per_contact_ext = "";
+    }
+}
+
+
+
 ?>
-<form action="" method="post">
+<a href="personne-liste.php">Retour à la liste</a>
+<form action="../traitements/personne-ajt-mod.php?mode=<?php echo $_GET["mode"] ?>" method="POST">
     <table>
-        <?php foreach($pers as $p){ ?>
+        <?php if (isset($_GET["id"])) { ?>
+            <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" class="form-control">
+        <?php } ?>
         <tr>
            <th><label for="prenom">Prénom</label></th>
-            <td><input type="text" name="prenom" id="prenom" value="<?php echo $p['per_prenom']?>"></td>
+            <td><input type="text" name="prenom" id="prenom" value="<?php echo $per_prenom ?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="nom">Nom</label></th>
-            <td><input type="text" name="nom" id="nom" value="<?php echo $p['per_nom']?>"></td>
+            <td><input type="text" name="nom" id="nom" value="<?php echo $per_nom?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="date_naiss">Date de naissance</label></th>
-            <td><input type="date" name="date_naiss" id="date_naiss" value="<?php echo $p['per_date_nais']?>"></td>
+            <td><input type="date" name="date_naiss" id="date_naiss" value="<?php echo $per_date_nais ?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="lieu_naiss">Lieu de naissance</label></th>
-            <td><input type="text" name="lieu_naiss" id="lieu_naiss" value="<?php echo $p['per_lieu_nais']?>"></td>
+            <td><input type="text" name="lieu_naiss" id="lieu_naiss" value="<?php echo $per_lieu_nais ?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="sexe">Sexe</label></th>
             <td><select name="sexe" >
-                    <option disabled>Veuillez choisir...</option>
-                    <option value="Masculin" <?php if ($p['per_sexe'] == "Masculin") echo "selected"?> >Masculin</option>
-                    <option value="Féminin"  <?php if ($p['per_sexe'] == "Féminin") echo "selected"?>>Féminin</option>
-                    <option value="Indéterminé"  <?php if ($p['per_sexe'] == "indéterminé") echo "selected"?>>Féminin</option>
+                    <option disabled selected>Veuillez choisir...</option>
+                    <option value="Masculin" <?php if ($per_sexe == "Masculin") echo "selected"?> >Masculin</option>
+                    <option value="Féminin"  <?php if ($per_sexe == "Féminin") echo "selected"?>>Féminin</option>
+                    <option value="Indéterminé"  <?php if ($per_sexe == "indéterminé") echo "selected"?>>Indéterminé</option>
                 </select>
             </td>
         </tr>
         <tr>
             <th><label for="mail">mail</label></th>
-            <td><input type="mail" name="mail" id="mail" value="<?php echo $p['per_lieu_nais']?>"></td>
+            <td><input type="mail" name="mail" id="mail" value="<?php echo $per_lieu_nais ?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="mdp">Mot de passe</label></th>
-            <td><input type="password" name="password" id="password" <?php echo $p['per_mdp']?>"></td>
+            <td><input type="password" name="password" id="password" value="<?php echo $per_mdp ?>" class="form-control"></td>
         </tr>
         <tr>
             <th><label for="admin">Admin ?</label></th>
-            <td><input type="checkbox" name="admin" id="admin" <?php if ($p['per_admin'] ==1) echo 'checked value="on"' ?>></td>
+            <td><input type="checkbox" name="admin" id="admin" <?php if ($per_admin ==1) echo 'checked value="on"'?> class="form-check-input"></td>
         </tr>
         <tr>
             <th><label for="redacteur">Rédacteur ?</label></th>
-            <td><input type="checkbox" name="redacteur" id="redacteur" <?php if ($p['per_redac'] ==1) echo 'checked value="on"' ?>></td>
+            <td><input type="checkbox" name="redacteur" id="redacteur" <?php if ($per_redac ==1) echo 'checked value="on"'?> class="form-check-input"></td>
         </tr>
         <tr>
             <th><label for="con_ext">Contact extérieur ?</label></th>
-            <td><input type="checkbox" name="con_ext" id="con_ext" <?php if ($p['per_contact_ext'] ==1) echo 'checked value="on"' ?>></td>
+            <td><input type="checkbox" name="contact_ext" id="contact_ext" <?php if ($per_contact_ext ==1) echo 'checked value="on"' ?> class="form-check-input"></td>
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="Valider"></td>
+            <td colspan="2"><input type="submit" value="Valider" class="button"></td>
         </tr>
-        <?php } ?>
     </table>
 </form>

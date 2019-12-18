@@ -48,7 +48,7 @@ include('../includes/header.php');
     <?php foreach ($pers as $p){ ?>
     <tr>
         <td><a href="personne-details.php?mode=modif&id=<?php echo $p['per_id']?>">M</td>
-        <td>S</td>
+        <td><a href="../traitements/personne-suppression.php?id=<?php echo $p['per_id']?>">S</td>
         <td><?php echo $p["per_prenom"]?></td>
         <td><?php echo $p["per_nom"] ?></td>
         <td><?php echo $p["per_date_nais"] ?></td>
