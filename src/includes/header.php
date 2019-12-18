@@ -34,11 +34,11 @@
             <a class="navbar-brand" href="../body/home.php">
                 <img class="img img-fluid logo-navbar" src="../../resources/img/logo.png" alt="logo du club">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarVisiteur" aria-controls="navbarVisiteur" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarVisiteur">
+            <div class="collapse navbar-collapse" id="navbarNav2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="../body/home.php">Accueil <span class="sr-only">(current)</span></a>
