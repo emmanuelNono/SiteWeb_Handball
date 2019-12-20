@@ -17,11 +17,13 @@ $pho = $photos->fetchall();
 
 
 ?>
-<a href="photo-details.php?mode=nouveau">
+<h2>Administration des photos : Listes des photos</h2>
+<a href="photo-details.php?mode=ajout">
     <button type="submit">Ajout d'une photo</button>
 </a>
 
 <table>
+    <thead>
     <tr>
         <td>Modifier</td>
         <td>Supprimer</td>
@@ -31,16 +33,19 @@ $pho = $photos->fetchall();
         <th>aperçu</th>
 
     </tr>
+    </thead>
+    <tbody>
     <?php foreach ($pho as $p){ ?>
         <tr>
             <td><a href="photo-details.php?mode=modif&id=<?php echo $p['pho_id']?>">M</a></td>
             <td><a href="galerie-suppression.php?&id=<?php echo $p['pho_id']?>">S</td>
             <td><?php echo $p["pho_nom"]?></td>
-            <td><?php echo $p["pho_album"] ?></td>
+            <td><?php echo $p["alb_libelle"] ?></td>
             <td><img src="../../resources/galerie/<?php echo $p["pho_nom"] ?>" alt="<?php echo $p["pho_nom"] ?>" width="50px"></td>
 
         </tr>
     <?php } ?>
+    </tbody>
 </table>
 <?php
 
