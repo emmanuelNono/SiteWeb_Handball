@@ -1,32 +1,56 @@
 <?php
+// les includes pour la création de la page
 include('../includes/head.php');
-include('../includes/header.php')
+include('../includes/header.php');
+
+// les includes techniques
+require_once '../includes/Database.php';
+require_once '../class/AffichageGalerie.php';
+
+// connexion à la base
+$o_pdo = new Database();
+$o_conn = $o_pdo->makeConnect();
+
+// on va chercher la liste des albums avec la photo la plus récente de chaque
+$o_alb = new AffichageGalerie();
+$albums = $o_alb->getUnePhotoParAlbum($o_conn);
+
+$alb = $albums->fetchall();
+
 ?>
 
+	<div class="row justify-content-center">
+    	<h1>Les photos de notre club</h1>
+	</div>
+	<br/><br/>
 
-<div class="row justify-content-center">
-    <h1>Les photos de notre club</h1>
-</div>
+	<!-- affichage des albums actifs dans des cards -->
+	<div class="container container-home">
+	    <div class="row justify-content-center">
+			<div class="card-columns col-md-12 justify-content-center">
 
-<br/>
+			<?php foreach ($alb as $a){ ?>
 
-<div class="container">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js">
-</script>
+				<div class="card" style="width: 18rem;">
+				  <img class="card-img-top" src="../../resources/galerie/<?php echo $a["pho_nom"] ?>" alt="Card image cap">
 
-<script>if(!window._rsz){window._rsz=function(){var i=iFrameResize({checkOrigin:false,interval:100});};if(document.readyState!="loading"){_rsz()}else{document.addEventListener("DOMContentLoaded",_rsz)}}
-</script>
+				  <div class="card-body">
+				    <h5 class="card-title"><?php echo $a["alb_libelle"] ?></h5>
+				    <p class="card-text"></p>
+				    <a href="galerie-album.php?idalb=<?php echo $a["pho_album_id"]?>" class="btn btn-warning">Voir les photos</a>
+				  </div>
+				</div>
+	    	<?php } ?>
 
-<iframe id="5def9dc7a99e7f34c8bb652a" src="https://scorenco.com/widget/5def9dc7a99e7f34c8bb652a/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no">
-	
-</iframe>
+	    	</div>
+		</div>
+	</div>
 
-<a style="font-size:11px" target="_blank" href="https://scorenco.com/hand/clubs/hbc-kingersheim/">HBC Kingersheim sur Score'n'co</a>
-
-</div>
-
-<br/>
 
 <?php
+
+$o_conn = null;
+$albums = null;
+
 include('../includes/footer.php');
 ?>
