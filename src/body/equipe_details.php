@@ -13,7 +13,7 @@ include('../includes/head.php');
 include('../includes/header.php');
 ?>
 
-<h2>Calendrier et résultat de l'équipe <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] ?></h2>
+<h2>Calendrier et résultats de l'équipe <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] ?></h2>
 <div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
     <script>
