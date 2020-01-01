@@ -11,6 +11,17 @@ class EquipeBase
         return $tbListEqu;
     }
 
+    // Return la ligne qui contient l'equipe passé en param
+    public function getEquipe($db, $id)
+    {
+        $o_rEquId = $db->prepare("SELECT * FROM equipe WHERE equipe.equ_id = :id");
+
+        $o_rEquId->bindParam(':id', $id);
+        $o_rEquId->execute();
+        $rowEquId = $o_rEquId->fetchall();
+        return $rowEquId;
+    }
+
     // Return le nom de l'entraineur d'une equipe passé en param
     public function getEntraineurEquipe($db, $id)
     {

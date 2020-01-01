@@ -13,7 +13,10 @@ include('../includes/head.php');
 include('../includes/header.php');
 ?>
 
-
+<a href="equipe_add_up.php?action=insert&idequ=new">
+    <img src="/SiteWeb_Handball/resources/img/img_button/add.jpg" alt="Ajouter" title="Ajouter"
+        style="width:20px;height:20px" />
+</a>
 <!-- start card -->
 <div class="container">
     <h3>Liste des équipes</h3><br>

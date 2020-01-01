@@ -12,7 +12,9 @@
             <p class="car-text"><strong>Heure : </strong><?php echo $tbListEquAct[$incrCard]['equ_heure_entrain']; ?>
             </p>
             <a class="btn btn-warning"
-                href="/SiteWeb_Handball/src/body/equipe_details.php?idequ=<?php echo $tbListEquAct[$incrCard]['equ_id']; ?>">Détails</a>
+                href="/SiteWeb_Handball/src/body/equipe_details.php?action=show&idequ=<?php echo $tbListEquAct[$incrCard]['equ_id']; ?>">Détails</a>
+            <a class="btn btn-success"
+                href="/SiteWeb_Handball/src/body/equipe_add_up.php?action=update&idequ=<?php echo $tbListEquAct[$incrCard]['equ_id']; ?>">Manage</a>
         </div>
     </div>
 </div>
