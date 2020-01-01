@@ -117,6 +117,8 @@ CREATE TABLE `equipe` (
   `equ_widget_id` varchar(255) NOT NULL,
   `equ_categorie` varchar(255) NOT NULL,
   `equ_division` varchar(255) NOT NULL,
+  `equ_jour_entrain` varchar(100) NULL,
+  `equ_heure_entrain` varchar(100) NULL,
   `equ_created_at` datetime NOT NULL,
   `equ_updated_at` datetime DEFAULT NULL,
   `equ_deleted_at` datetime DEFAULT NULL
