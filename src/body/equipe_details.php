@@ -32,5 +32,5 @@ include('../includes/header.php');
     }
     </script><iframe id="<?php $id_widget = $tbListEquAct[$_GET["idequ"] - 1]['equ_widget_id']; ?>"
         src="https://scorenco.com/widget/<?php echo $id_widget = $tbListEquAct[$_GET["idequ"] - 1]['equ_widget_id']; ?>/?auto_height=true"
-        style="display: block; width: 60%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+        style="display: block; width: 55%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
 </div>
