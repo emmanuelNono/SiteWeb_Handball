@@ -1,7 +1,7 @@
 <?php
 
 
-class GalerieBase
+class PhotoBase
 {
     public function getPhotosActives($db){
         $sql_pa = "SELECT * FROM photo where pho_deleted_at is null";
