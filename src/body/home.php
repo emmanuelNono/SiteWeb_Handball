@@ -163,13 +163,13 @@ include('../includes/header.php');
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/img/partLogo-Leclerc.png" class="img-fluid d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselSponsors" role="button" data-slide="prev">
@@ -191,13 +191,13 @@ include('../includes/header.php');
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/galerie/1.jpg" class="img-fluid d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/galerie/5.jpg" class="img-fluid d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="http://placehold.it/800x300" class="img-fluid d-block w-100" alt="...">
+                        <img src="../../resources/galerie/7.jpg" class="img-fluid d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselGallerie" role="button" data-slide="prev">
