@@ -81,20 +81,19 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
             <form class="col-ms-2 col-md-6 col-lg-12" action="" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="formelabquid">ID &eacute;quipe</label>
-                        <input type="text" class="form-control" id="formequid" value="<?php echo $_GET["idequ"] ?>"
+                        <input type="hidden" class="form-control" id="formequid" value="<?php echo $_GET["idequ"] ?>"
                             name="formequid" placeholder="ID équipe" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="hidden" class="form-control" id="formperid" value="<?php echo $per_id ?>"
+                            name="formperid" placeholder="ID coach" required />
                     </div>
                     <div class="form-group col-md-6">
                         <label for="formequlib">Nom &eacute;quipe</label>
                         <input type="text" class="form-control" id="formequlib" value="<?php echo $equ_libelle ?>"
                             name="formequlib" placeholder="Nom équipe" required />
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="formlabperid">ID Entraineur</label>
-                        <input type="text" class="form-control" id="formperid" value="<?php echo $per_id ?>"
-                            name="formperid" placeholder="ID coach" required />
-                    </div>
+
                     <div class="form-group col-md-6">
                         <label for="formlabpernom">Entra&icirc;neur</label>
                         <input type="text" class="form-control" id="formpernomprenom"
