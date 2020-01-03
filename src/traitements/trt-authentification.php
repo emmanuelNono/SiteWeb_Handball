@@ -29,7 +29,7 @@ else {
         }
 
         if ($util[0]["per_admin"] ==1 or $util[0]["per_redac"]==1){
-            header("location:home.php");
+            header("location:../body/home.php");
         }
         else {
             if ($util["per_admin"] == 0 and $util["per_redac"] == 0) {
