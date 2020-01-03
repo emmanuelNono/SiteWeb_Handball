@@ -2,19 +2,21 @@
     <div class="card" style="margin-bottom: 10px">
         <img class="card-img-top" src="/SiteWeb_Handball/resources/galerie/<?php echo $incrCard ?>.jpg" alt="">
         <h4 class="car-title">
-            <?php echo $tbListEquAct[$incrCard]['equ_libelle'] . " (" . $tbListEquAct[$incrCard]['equ_division'] . " )" ?>
+            <?php echo $tbListEquActAndEntrain[$incrCard]['equ_libelle'] . " (" . $tbListEquActAndEntrain[$incrCard]['equ_division'] . " )" ?>
         </h4>
         <div class="card-body">
-            <p class="car-text"><strong>Entraîneur :</strong> <?php echo $tbListEquAct[$incrCard]['equ_libelle']; ?>
+            <p class="car-text"><strong>Entraîneur :</strong>
+                <?php echo $tbListEquActAndEntrain[$incrCard]['per_prenom'] . " " . $tbListEquActAndEntrain[$incrCard]['per_nom']; ?>
             </p>
             <p class="car-text"><strong>Entrainement :</strong>
-                <?php echo $tbListEquAct[$incrCard]['equ_jour_entrain']; ?></p>
-            <p class="car-text"><strong>Heure : </strong><?php echo $tbListEquAct[$incrCard]['equ_heure_entrain']; ?>
+                <?php echo $tbListEquActAndEntrain[$incrCard]['equ_jour_entrain']; ?></p>
+            <p class="car-text"><strong>Heure :
+                </strong><?php echo $tbListEquActAndEntrain[$incrCard]['equ_heure_entrain']; ?>
             </p>
             <a class="btn btn-warning"
-                href="/SiteWeb_Handball/src/body/equipe_details.php?action=show&idequ=<?php echo $tbListEquAct[$incrCard]['equ_id']; ?>">Détails</a>
+                href="/SiteWeb_Handball/src/body/equipe_details.php?action=show&idequ=<?php echo $tbListEquActAndEntrain[$incrCard]['equ_id']; ?>">Détails</a>
             <a class="btn btn-success"
-                href="/SiteWeb_Handball/src/body/equipe_add_up.php?action=update&idequ=<?php echo $tbListEquAct[$incrCard]['equ_id']; ?>">Manage</a>
+                href="/SiteWeb_Handball/src/body/equipe_add_up.php?action=update&idequ=<?php echo $tbListEquActAndEntrain[$incrCard]['equ_id']; ?>">Manage</a>
         </div>
     </div>
 </div>
