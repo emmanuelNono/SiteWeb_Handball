@@ -2,6 +2,7 @@
 
     <!-- vérifie si l'utilisateur de la session est admin ou rédacteur pour faire apparaître la navbar Admin -->
     <?php
+    echo $_SESSION["admin"];
     if ((isset($_SESSION["admin"]) and ($_SESSION["admin"] == 1)) || (isset($_SESSION["redac"]) and ($_SESSION["redac"] == 1))) {
         include('navbarAdmin.php');
     }

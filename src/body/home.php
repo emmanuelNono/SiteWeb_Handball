@@ -1,5 +1,4 @@
 <?php
-
 require_once '../includes/Database.php';
 require_once '../class/ArticleBase.php';
 
@@ -18,7 +17,7 @@ include('../includes/header.php');
 
     <!-- 
     <h2><?php // echo "id session = ".session_id() ?></h2>
-    <h2><?php // echo "admin = ".$_SESSION["admin"] ?></h2>
+    <h2><?php  echo "admin = ".$_SESSION["admin"] ?></h2>
     <h2><?php // echo "redac = ".$_SESSION["redac"] ?></h2>
     -->
     
