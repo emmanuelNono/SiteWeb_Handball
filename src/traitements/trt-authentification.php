@@ -34,13 +34,13 @@ else {
         else {
             if ($util["per_admin"] == 0 and $util["per_redac"] == 0) {
                 // pas de droit
-                header("location:login.php?mes=pasDeDroit");
+                header("location:../body/login.php?mes=pasDeDroit");
             }
         }
     }
     else{
         // utilisateur non enregistré
-        header("location:login.php?mes=pasDUtilisateur");
+        header("location:../body/login.php?mes=pasDUtilisateur");
     }
 }
 
