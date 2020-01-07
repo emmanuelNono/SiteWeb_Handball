@@ -2,10 +2,16 @@
 // les includes
 require_once '../includes/Database.php';
 require_once '../class/PersonneBase.php';
+require_once '../class/SexeBase.php';
 
 // connexion à la base
 $o_pdo = new Database();
 $o_conn = $o_pdo->makeConnect();
+
+// on va chercher les sexe actifs
+$o_sb = new SexeBase();
+$sexes = $o_sb->getSexeActifs($o_conn);
+$sex = $sexes->fetchall();
 
 if ($_GET["mode"] == "modif"){
     // on va chercher la personne
@@ -75,9 +81,9 @@ else{
             <th><label for="sexe">Sexe</label></th>
             <td><select name="sexe" >
                     <option disabled selected>Veuillez choisir...</option>
-                    <option value="Masculin" <?php if ($per_sexe == "Masculin") echo "selected"?> >Masculin</option>
-                    <option value="Féminin"  <?php if ($per_sexe == "Féminin") echo "selected"?>>Féminin</option>
-                    <option value="Indéterminé"  <?php if ($per_sexe == "indéterminé") echo "selected"?>>Indéterminé</option>
+                    <?php foreach ($sex as $se) { ?>}
+                    <option value="<?php echo $se["sex_id"]?>" <?php if ($per_sexe == $se["sex_id"]) echo "selected"?> ><?php echo $se["sex_intitule"]?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
