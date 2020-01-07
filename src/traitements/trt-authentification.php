@@ -24,8 +24,16 @@ else {
             $_SESSION["admin"] = 1;
         }
 
+        if ($util[0]["per_admin"] == 0) {
+            $_SESSION["admin"] = 0;
+        }
+
         if ($util[0]["per_redac"] == 1) {
             $_SESSION["redac"] = 1;
+        }
+
+        if ($util[0]["per_redac"] == 0) {
+            $_SESSION["redac"] = 0;
         }
 
         if ($util[0]["per_admin"] ==1 or $util[0]["per_redac"]==1){

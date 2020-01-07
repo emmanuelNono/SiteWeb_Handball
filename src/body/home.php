@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once '../includes/Database.php';
 require_once '../class/ArticleBase.php';
@@ -16,7 +15,13 @@ include('../includes/header.php');
 ?>
 
 <div class="container container-home">
-    <h2><?php echo "admin = ".$_SESSION["admin"]." ".session_id() ?></h2>
+
+    <!-- 
+    <h2><?php echo "id session = ".session_id() ?></h2>
+    <h2><?php echo "admin = ".$_SESSION["admin"] ?></h2>
+    <h2><?php echo "redac = ".$_SESSION["redac"] ?></h2>
+    -->
+    
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12">
             <div id="carouselArticles" class="carousel slide" data-ride="carousel">

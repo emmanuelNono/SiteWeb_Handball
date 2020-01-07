@@ -1,8 +1,9 @@
 <header>
 
+<?php session_start(); ?>
     <!-- vérifie si l'utilisateur de la session est admin ou rédacteur pour faire apparaître la navbar Admin -->
-    <?php 
-    if ($_SESSION["admin"] = 1 || $_SESSION["redac"] = 1) {
+    <?php
+    if ($_SESSION["admin"] == 1 || $_SESSION["redac"] == 1) {
         include('navbarAdmin.php');
     }
     ?>
