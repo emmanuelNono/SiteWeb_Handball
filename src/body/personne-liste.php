@@ -13,14 +13,24 @@ $o_pers = new PersonneBase();
 $personnes = $o_pers->getPersonnesActives($o_conn);
 $pers = $personnes->fetchall();
 
+include('../includes/head.php');
+include('../includes/header.php');
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <h1>Administration : Liste des personnes</h1>
 <a href="personne-details.php?mode=nouveau">
-    <button type="submit">Ajout d'une personne</button>
+    <button class="btn btn-warning" type="submit">Ajout d'une personne</button>
 </a>
+<div class="table-responsive">
+    <table id="listePersonne" class="table table-striped table-bordered table-sm">
+        <thead>
+            <tr>
+                <td>Modifier</td>
+                <td>Supprimer</td>
 
+                <th scope="col"><label for="prenom">Prénom</label></th>
+                <th scope="col"><label for="nom">Nom</label></th>
 
 <table class="table table-striped">
     <thead>

@@ -6,13 +6,13 @@ use bd_hbck;
 INSERT INTO personne (per_id, per_nom, per_prenom, per_date_nais, per_lieu_nais, per_sexe, per_mail, per_mdp, per_admin, per_redac, per_contact_ext, per_created_at, per_updated_at, per_deleted_at) VALUES (
 null, "GENETAY", "Alain", "1965-05-23", "Truchtersheim", "Masculin", "alaingenetay.hbck@gmail.com", "tito", 1,0, 0, now(), null, null);
 INSERT INTO personne (per_id, per_nom, per_prenom, per_date_nais, per_lieu_nais, per_sexe, per_mail, per_mdp, per_admin, per_redac, per_contact_ext, per_created_at, per_updated_at, per_deleted_at) VALUES (
-null, "GALLIOZ", "Cécile", "1975-05-23", "Truchtersheim", "Masculin", "cecile@gallioz.fr", "tito", 1,0, 0, now(), null, null);
+null, "GALLIOZ", "Cécile", "1975-05-23", "Paris", "Féminin", "cecile@gallioz.fr", "tito", 1,0, 0, now(), null, null);
 INSERT INTO personne (per_id, per_nom, per_prenom, per_date_nais, per_lieu_nais, per_sexe, per_mail, per_mdp, per_admin, per_redac, per_contact_ext, per_created_at, per_updated_at, per_deleted_at) VALUES (
-null, "NONO", "Emmanuel", "1982-05-23", "Truchtersheim", "Masculin", "manuelnono@hotmail.fr", "tito", 1,0, 0, now(), null, null);
+null, "NONO", "Emmanuel", "1982-05-23", "Paris", "Masculin", "manuelnono@hotmail.fr", "tito", 1,0, 0, now(), null, null);
 INSERT INTO personne (per_id, per_nom, per_prenom, per_date_nais, per_lieu_nais, per_sexe, per_mail, per_mdp, per_admin, per_redac, per_contact_ext, per_created_at, per_updated_at, per_deleted_at) VALUES (
-null, "KOSCHIG", "Raphaël", "1982-04-26", "Truchtersheim", "Masculin", "alaingenetay.hbck@gmail.com", "tito", 1,0, 0, now(), null, null);
+null, "KOSCHIG", "Raphaël", "1982-04-26", "Strasbourg", "Masculin", "raphael.koschig@gmail.com", "tito", 1,0, 0, now(), null, null);
 INSERT INTO personne (per_id, per_nom, per_prenom, per_date_nais, per_lieu_nais, per_sexe, per_mail, per_mdp, per_admin, per_redac, per_contact_ext, per_created_at, per_updated_at, per_deleted_at) VALUES (
-null, "SAUVIGNON", "Dominique", "1976-03-26", "Truchtersheim", "Masculin", "alaingenetay.hbck@gmail.com", "tito", 1,0, 0, now(), null, null);
+null, "SAUVIGNON", "Dominique", "1976-03-26", "Truchtersheim", "Masculin", "dominique21000@gmail.com", "tito", 1,0, 0, now(), null, null);
 
 
 -- Table Article
@@ -48,5 +48,5 @@ INSERT INTO lien_per_fon_equ (lpfe_id, lpfe_per_id, lpfe_fon_id, lpfe_equ_id, lp
 null, 1,2,null, now(), null, null);
 
 -- table photo
-INSERT INTO photo (pho_id, pho_link, pho_libelle, pho_created_at, pho_updated_at, pho_deleted_at) VALUES (
-null, "toto.jpg", "Illustration", now(), null, null);
+INSERT INTO photo (pho_id, pho_nom, pho_album, pho_created_at, pho_updated_at, pho_deleted_at) VALUES (
+null, "toto.jpg", "Equipe1", now(), null, null);

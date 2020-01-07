@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (isset($_GET["mes"]))
 {
     if ($_GET["mes"] == "pasDeDroit")
@@ -13,6 +11,9 @@ if (isset($_GET["mes"]))
         echo "Désolé, vous n'êtes pas un utilisateur authentifié.";
     }
 }
+
+include('../includes/head.php');
+include('../includes/header.php');
 ?>
 
 <form action="../traitements/trt-authentification.php" method="post">
@@ -30,3 +31,7 @@ if (isset($_GET["mes"]))
     Vous souhaitez entrer dans la zone d'administration ? Contactez-nous : <a href="mailto:?subject='Demande d\'entrer
     dans la zone d\'administration du club de Handball">ICI</a>
 </form>
+
+<?php 
+include('../includes/footer.php');
+?>

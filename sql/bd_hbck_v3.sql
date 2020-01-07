@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mar. 17 déc. 2019 à 08:13
+-- Généré le :  jeu. 19 déc. 2019 à 19:40
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.19
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bd_hbck`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `album`
+--
+
+CREATE TABLE `album` (
+  `alb_id` int(11) NOT NULL,
+  `alb_libelle` varchar(50) NOT NULL,
+  `alb_created_at` datetime DEFAULT NULL,
+  `alb_updated_at` datetime DEFAULT NULL,
+  `alb_deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `album`
+--
+
+INSERT INTO `album` (`alb_id`, `alb_libelle`, `alb_created_at`, `alb_updated_at`, `alb_deleted_at`) VALUES
+(1, 'Equipe 1', '2019-12-19 18:42:56', NULL, NULL),
+(2, 'Equipe 2', '2019-12-19 18:42:56', NULL, NULL),
+(3, 'Equipe 3', '2019-12-19 18:42:56', NULL, NULL),
+(4, 'Equipe 4', '2019-12-19 18:42:56', NULL, NULL),
+(5, 'Equipe 5', '2019-12-19 18:42:56', NULL, NULL),
+(6, 'Equipe 6', '2019-12-19 18:42:56', NULL, NULL),
+(7, 'Equipe 7', '2019-12-19 18:42:56', NULL, NULL),
+(8, 'photo de rentrée', '2019-12-19 18:42:56', NULL, NULL),
+(10, 'Fêtes de le toussaint', '2019-12-19 18:42:56', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -45,7 +74,8 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`art_id`, `art_titre`, `art_contenu`, `art_auteur_id`, `art_photo_id`, `art_actif`, `art_created_at`, `art_updated_at`, `art_deleted_at`) VALUES
-(1, 'Bienvenue', 'Ceci est ma première news', 1, 1, 1, '2019-12-13 19:22:57', NULL, NULL);
+(1, 'Bienvenue', 'Ceci est ma première news', 1, 1, 1, '2019-12-13 19:22:57', NULL, NULL),
+(2, 'Premier match', 'Premier match de notre équipe favorite pour cette saison.', 2, 2, 1, '2019-12-17 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,7 +215,7 @@ INSERT INTO `personne` (`per_id`, `per_nom`, `per_prenom`, `per_date_nais`, `per
 CREATE TABLE `photo` (
   `pho_id` int(11) NOT NULL,
   `pho_nom` varchar(255) NOT NULL,
-  `pho_album` varchar(255) NOT NULL,
+  `pho_album_id` int(255) NOT NULL,
   `pho_created_at` datetime NOT NULL,
   `pho_updated_at` datetime DEFAULT NULL,
   `pho_deleted_at` datetime DEFAULT NULL
@@ -195,8 +225,26 @@ CREATE TABLE `photo` (
 -- Déchargement des données de la table `photo`
 --
 
-INSERT INTO `photo` (`pho_id`, `pho_nom`, `pho_album`, `pho_created_at`, `pho_updated_at`, `pho_deleted_at`) VALUES
-(1, 'toto.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL);
+INSERT INTO `photo` (`pho_id`, `pho_nom`, `pho_album_id`, `pho_created_at`, `pho_updated_at`, `pho_deleted_at`) VALUES
+(1, '1.jpg', 1, '2019-12-13 19:22:57', NULL, NULL),
+(2, '2.jpg', 2, '2019-12-13 19:22:57', NULL, NULL),
+(3, '3.jpg', 3, '2019-12-13 19:22:57', NULL, NULL),
+(4, '4.jpg', 4, '2019-12-13 19:22:57', NULL, NULL),
+(5, '5.jpg', 5, '2019-12-13 19:22:57', NULL, NULL),
+(6, '6.jpg', 6, '2019-12-13 19:22:57', NULL, NULL),
+(7, '7.jpg', 7, '2019-12-13 19:22:57', NULL, NULL),
+(8, 'toto', 8, '2019-12-18 23:25:47', NULL, NULL),
+(9, 'ioui', 9, '2019-12-18 23:27:28', NULL, NULL),
+(10, 'ioui', 10, '2019-12-18 23:35:38', NULL, NULL),
+(11, 'moi', 10, '2019-12-18 23:42:13', NULL, NULL),
+(12, 'moi', 10, '2019-12-18 23:43:40', NULL, NULL),
+(13, 'moi', 9, '2019-12-18 23:44:03', NULL, NULL),
+(14, 'C:/laragon/www/projetTutoreWeb/resources/galerie/14..jpeg', 10, '2019-12-18 23:46:28', NULL, NULL),
+(15, '15.jpeg', 10, '2019-12-18 23:47:23', NULL, NULL),
+(16, '16.jpeg', 8, '2019-12-18 23:55:11', NULL, NULL),
+(17, '17.jpeg', 7, '2019-12-18 23:57:43', NULL, NULL),
+(18, '18.png', 10, '2019-12-19 19:20:22', '2019-12-19 20:30:41', NULL),
+(19, '19.jpeg', 8, '2019-12-19 20:35:42', '2019-12-19 20:35:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -224,12 +272,18 @@ CREATE TABLE `rencontre` (
 --
 
 --
+-- Index pour la table `album`
+--
+ALTER TABLE `album`
+  ADD PRIMARY KEY (`alb_id`);
+
+--
 -- Index pour la table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`art_id`),
   ADD KEY `fk_per_art` (`art_auteur_id`),
-  ADD KEY `fk_photo_id` (`art_photo_id`);
+  ADD KEY `fk_pho_art` (`art_photo_id`);
 
 --
 -- Index pour la table `equipe`
@@ -279,7 +333,7 @@ ALTER TABLE `rencontre`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `equipe`
@@ -306,12 +360,6 @@ ALTER TABLE `personne`
   MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `photo`
---
-ALTER TABLE `photo`
-  MODIFY `pho_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT pour la table `rencontre`
 --
 ALTER TABLE `rencontre`
@@ -325,7 +373,8 @@ ALTER TABLE `rencontre`
 -- Contraintes pour la table `article`
 --
 ALTER TABLE `article`
-  ADD CONSTRAINT `fk_per_art` FOREIGN KEY (`art_auteur_id`) REFERENCES `personne` (`per_id`);
+  ADD CONSTRAINT `fk_per_art` FOREIGN KEY (`art_auteur_id`) REFERENCES `personne` (`per_id`),
+  ADD CONSTRAINT `fk_pho_art` FOREIGN KEY (`art_photo_id`) REFERENCES `photo` (`pho_id`);
 
 --
 -- Contraintes pour la table `lien_per_fon_equ`
@@ -334,12 +383,6 @@ ALTER TABLE `lien_per_fon_equ`
   ADD CONSTRAINT `fk_lpfe_equ` FOREIGN KEY (`lpfe_equ_id`) REFERENCES `equipe` (`equ_id`),
   ADD CONSTRAINT `fk_lpfe_fon` FOREIGN KEY (`lpfe_fon_id`) REFERENCES `fonction` (`fon_id`),
   ADD CONSTRAINT `fk_lpfe_per` FOREIGN KEY (`lpfe_per_id`) REFERENCES `personne` (`per_id`);
-
---
--- Contraintes pour la table `photo`
---
-ALTER TABLE `photo`
-  ADD CONSTRAINT `FK_Photo_id` FOREIGN KEY (`pho_id`) REFERENCES `article` (`art_id`);
 
 --
 -- Contraintes pour la table `rencontre`

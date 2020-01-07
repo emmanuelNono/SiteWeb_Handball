@@ -9,7 +9,7 @@ class Database
     var $connection = "";
 
     // paramètres passée : valeur par défaut
-    function __construct($base = "bd_hbck", $user = "hbck", $password = "hbck-serfa#67", $host = "localhost")
+    function __construct($base = "bd_hbck", $user = "root", $password = "", $host = "localhost")
     {
         $this->baseName = $base;
         $this->baseUser = $user;

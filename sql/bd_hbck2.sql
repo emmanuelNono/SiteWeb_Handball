@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mar. 17 déc. 2019 à 08:13
+-- Généré le :  mar. 17 déc. 2019 à 13:27
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.19
 
@@ -45,7 +45,8 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`art_id`, `art_titre`, `art_contenu`, `art_auteur_id`, `art_photo_id`, `art_actif`, `art_created_at`, `art_updated_at`, `art_deleted_at`) VALUES
-(1, 'Bienvenue', 'Ceci est ma première news', 1, 1, 1, '2019-12-13 19:22:57', NULL, NULL);
+(1, 'Bienvenue', 'Ceci est ma première news', 1, 1, 1, '2019-12-13 19:22:57', NULL, NULL),
+(2, 'Premier match', 'Premier match de notre équipe favorite pour cette saison.', 2, 2, 1, '2019-12-17 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,13 @@ CREATE TABLE `photo` (
 --
 
 INSERT INTO `photo` (`pho_id`, `pho_nom`, `pho_album`, `pho_created_at`, `pho_updated_at`, `pho_deleted_at`) VALUES
-(1, 'toto.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL);
+(1, '1.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL),
+(2, '2.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL),
+(3, '3.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL),
+(4, '4.jpg', 'Equipe2', '2019-12-13 19:22:57', NULL, NULL),
+(5, '5.jpg', 'Equipe2', '2019-12-13 19:22:57', NULL, NULL),
+(6, '6.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL),
+(7, '7.jpg', 'Equipe1', '2019-12-13 19:22:57', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -229,7 +236,7 @@ CREATE TABLE `rencontre` (
 ALTER TABLE `article`
   ADD PRIMARY KEY (`art_id`),
   ADD KEY `fk_per_art` (`art_auteur_id`),
-  ADD KEY `fk_photo_id` (`art_photo_id`);
+  ADD KEY `fk_pho_art` (`art_photo_id`);
 
 --
 -- Index pour la table `equipe`
@@ -259,7 +266,7 @@ ALTER TABLE `personne`
   ADD PRIMARY KEY (`per_id`);
 
 --
--- Index pour la table `photo`
+-- Index pour la table `photo` 
 --
 ALTER TABLE `photo`
   ADD PRIMARY KEY (`pho_id`);
@@ -279,37 +286,37 @@ ALTER TABLE `rencontre`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `art_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
-  MODIFY `equ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `equ_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `fonction`
 --
 ALTER TABLE `fonction`
-  MODIFY `fon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `fon_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `lien_per_fon_equ`
 --
 ALTER TABLE `lien_per_fon_equ`
-  MODIFY `lpfe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `lpfe_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `pho_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pho_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `rencontre`
@@ -322,10 +329,11 @@ ALTER TABLE `rencontre`
 --
 
 --
--- Contraintes pour la table `article`
+-- Contraintes pour la table `article` 
 --
 ALTER TABLE `article`
-  ADD CONSTRAINT `fk_per_art` FOREIGN KEY (`art_auteur_id`) REFERENCES `personne` (`per_id`);
+  ADD CONSTRAINT `fk_per_art` FOREIGN KEY (`art_auteur_id`) REFERENCES `personne` (`per_id`),
+  ADD CONSTRAINT `fk_pho_art` FOREIGN KEY (`art_photo_id`) REFERENCES `photo` (`pho_id`);
 
 --
 -- Contraintes pour la table `lien_per_fon_equ`
@@ -334,12 +342,6 @@ ALTER TABLE `lien_per_fon_equ`
   ADD CONSTRAINT `fk_lpfe_equ` FOREIGN KEY (`lpfe_equ_id`) REFERENCES `equipe` (`equ_id`),
   ADD CONSTRAINT `fk_lpfe_fon` FOREIGN KEY (`lpfe_fon_id`) REFERENCES `fonction` (`fon_id`),
   ADD CONSTRAINT `fk_lpfe_per` FOREIGN KEY (`lpfe_per_id`) REFERENCES `personne` (`per_id`);
-
---
--- Contraintes pour la table `photo`
---
-ALTER TABLE `photo`
-  ADD CONSTRAINT `FK_Photo_id` FOREIGN KEY (`pho_id`) REFERENCES `article` (`art_id`);
 
 --
 -- Contraintes pour la table `rencontre`
