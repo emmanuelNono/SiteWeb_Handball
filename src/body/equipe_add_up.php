@@ -28,8 +28,9 @@ if ($_GET["action"] == "update" && ctype_digit($_GET["idequ"])) {
     $uniqueEqu = null;
 } else {
     if ($_GET["idequ"] == "new") {
+        $idequ = "new";
         $uniqueEqu = array();
-        $equ_id = "";
+        $equ_id = "new";
         $equ_libelle = "";
         $equ_categorie = "";
         $equ_division = "";
@@ -41,10 +42,27 @@ if ($_GET["action"] == "update" && ctype_digit($_GET["idequ"])) {
     }
 }
 
+
+
 // gestion de la validation en fonction de new ou update
 if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action'] == 'insert') {
-    //echo "on enregistre les infos";
+    //recup des valeur du form
+    $form_equ_id = $_POST["formequid"];
+    $form_equ_libelle = $_POST["formequlib"];
+    $form_equ_categorie = $_POST["formequcat"];
+    $form_equ_division = $_POST["formequdiv"];
+    $form_equ_jour_entrain = $_POST["formjourentrain"];
+    $form_equ_heure_entrain = $_POST["formheureentrain"];
+
+    $equInsertBase = new EquipeBase();
+    $insertUniqueEqu = $equInsertBase->setUpdateEquipe($o_conn, $form_equ_id, $form_equ_libelle, $form_equ_categorie, $form_equ_division, $form_equ_jour_entrain, $form_equ_heure_entrain);
+    if ($insertUniqueEqu == true) {
+        echo '<h3>' . "L'insertion a été effectuée" . '</h3><br>';
+    } else {
+        echo '<h3>' . "L'insertion a échouée" . '</h3><br>';
+    }
 } elseif (isset($_POST['validation']) && ctype_digit($_POST['formequid']) && $_GET['action'] == 'update') {
+
     //recup des variables
     $form_equ_id = $_POST["formequid"];
     $form_equ_libelle = $_POST["formequlib"];
@@ -54,14 +72,12 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
     $form_equ_heure_entrain = $_POST["formheureentrain"];
     $form_per_id = $_POST["formperid"];
     $form_per_nom = $_POST["formpernomprenom"];
-
     $equUpdateBase = new EquipeBase();
-    $updateuniqueEqu = $equUpdateBase->setEquipe($o_conn, $idequ, $form_equ_libelle, $form_equ_categorie, $form_equ_division, $form_equ_jour_entrain, $form_equ_heure_entrain);
+    $updateuniqueEqu = $equUpdateBase->setUpdateEquipe($o_conn, $form_equ_id, $form_equ_libelle, $form_equ_categorie, $form_equ_division, $form_equ_jour_entrain, $form_equ_heure_entrain);
     if ($updateuniqueEqu == true) {
         echo '<h3>' . "La modification a été effectuée" . '</h3><br>';
     }
 }
-
 
 
 ?>
@@ -84,6 +100,8 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
                         <input type="hidden" class="form-control" id="formequid" value="<?php echo $_GET["idequ"] ?>"
                             name="formequid" placeholder="ID équipe" required />
                     </div>
+                    <!-- <?php var_dump($_GET["idequ"]); ?>
+                    <?php var_dump($idequ); ?> -->
                     <div class="form-group col-md-6">
                         <input type="hidden" class="form-control" id="formperid" value="<?php echo $per_id ?>"
                             name="formperid" placeholder="ID coach" required />
@@ -138,7 +156,7 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
                                 <?php if ($equ_division == "Excellence Regionale") echo " selected" ?>>Excellence
                                 Régionale - Région</option>
                             <option value="Honneur Regionale"
-                                <?php if ($equ_division == "Honneur Regionale") echo " selected" ?>>Excellence
+                                <?php if ($equ_division == "Honneur Regionale") echo " selected" ?>>Honneur
                                 Régionale
                                 - Région</option>
                             <option value="Pre-regionale"
@@ -168,7 +186,23 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
                             placeholder="Heure entrainement" />
                     </div>
                 </div>
-                <p></p>
+                <br>
+                <!-- <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formlabellisteentrain">Liste entraineur</label>
+                        <select class="form-control" name="formlisteentrain" id="formlisteentrain">
+                            <option disabled selected>Choisir un entraîneur...</option>
+                            <?php $listEntrainBase = new EquipeBase();
+                            $tblistEntrain = $listEntrainBase->getEntraineursActifs($o_conn);
+                            for ($incrNomEntrain = 0; $incrNomEntrain < count($tblistEntrain); $incrNomEntrain++) { ?>
+                            <option value="<?php echo $tblistEntrain[$incrNomEntrain]["per_id"] ?>">
+                                <?php echo $tblistEntrain[$incrNomEntrain]["per_prenom"] . " " . $tblistEntrain[$incrNomEntrain]["per_nom"] ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div> -->
+                <br>
                 <input class="btn btn-success" type="submit" value="Enregistrer" name="validation">
             </form>
         </div>

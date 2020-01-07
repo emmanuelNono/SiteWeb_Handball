@@ -29,7 +29,6 @@ class EquipeBase
     // Return le nom de l'entraineur d'une equipe passé en param
     public function getEquipeActivesAndEntraineur($db)
     {
-
         $sql_equAndEntrain = "SELECT equipe.equ_id,equipe.equ_libelle,equipe.equ_widget_id,equipe.equ_categorie,equipe.equ_division,equipe.equ_jour_entrain,equipe.equ_heure_entrain, 
         personne.per_id, personne.per_nom, personne.per_prenom FROM equipe
                 INNER JOIN lien_per_fon_equ ON equipe.equ_id=lien_per_fon_equ.lpfe_equ_id 
@@ -68,24 +67,73 @@ class EquipeBase
         return $photo;
     }
 
-    public function setEquipe($db, $id, $form_equ_libelle, $form_equ_categorie, $form_equ_division, $form_equ_jour_entrain, $form_equ_heure_entrain)
+    public function setUpdateEquipe($db, $id, $form_equ_libelle, $form_equ_categorie, $form_equ_division, $form_equ_jour_entrain, $form_equ_heure_entrain)
     {
-        $o_updateEquipeAndEntrain = $db->prepare("UPDATE equipe SET 
+        if ($id == "new") {
+            //var_dump("on est dans un insert Equipe dur " . $id);
+            $o_insertEquipeAndEntrain = $db->prepare("INSERT INTO equipe 
+            (equ_id, equ_libelle, equ_categorie, equ_division, equ_jour_entrain, equ_heure_entrain, equ_created_at)
+            VALUES (
+            null,
+            :form_equ_libelle,
+            :form_equ_categorie,
+            :form_equ_division,
+            :form_equ_jour_entrain,
+            :form_equ_heure_entrain,
+            NOW()
+            )");
+            $o_insertEquipeAndEntrain->bindParam(':form_equ_libelle', $form_equ_libelle);
+            $o_insertEquipeAndEntrain->bindParam(':form_equ_categorie', $form_equ_categorie);
+            $o_insertEquipeAndEntrain->bindParam(':form_equ_division', $form_equ_division);
+            $o_insertEquipeAndEntrain->bindParam(':form_equ_jour_entrain', $form_equ_jour_entrain);
+            $o_insertEquipeAndEntrain->bindParam(':form_equ_heure_entrain', $form_equ_heure_entrain);
+
+            $rs_setEquipeInsert = $o_insertEquipeAndEntrain->execute();
+            return $rs_setEquipeInsert;
+        } else {
+            $o_updateEquipeAndEntrain = $db->prepare("UPDATE equipe SET 
         equ_libelle=:form_equ_libelle,
         equ_categorie=:form_equ_categorie,
         equ_division=:form_equ_division,
         equ_jour_entrain=:form_equ_jour_entrain,
         equ_heure_entrain=:form_equ_heure_entrain,
         equ_updated_at = CURRENT_TIME WHERE equ_id=:id");
-        $o_updateEquipeAndEntrain->bindParam(':id', $id);
-        $o_updateEquipeAndEntrain->bindParam(':form_equ_libelle', $form_equ_libelle);
-        $o_updateEquipeAndEntrain->bindParam(':form_equ_categorie', $form_equ_categorie);
-        $o_updateEquipeAndEntrain->bindParam(':form_equ_division', $form_equ_division);
-        $o_updateEquipeAndEntrain->bindParam(':form_equ_jour_entrain', $form_equ_jour_entrain);
-        $o_updateEquipeAndEntrain->bindParam(':form_equ_heure_entrain', $form_equ_heure_entrain);
+            $o_updateEquipeAndEntrain->bindParam(':id', $id);
+            $o_updateEquipeAndEntrain->bindParam(':form_equ_libelle', $form_equ_libelle);
+            $o_updateEquipeAndEntrain->bindParam(':form_equ_categorie', $form_equ_categorie);
+            $o_updateEquipeAndEntrain->bindParam(':form_equ_division', $form_equ_division);
+            $o_updateEquipeAndEntrain->bindParam(':form_equ_jour_entrain', $form_equ_jour_entrain);
+            $o_updateEquipeAndEntrain->bindParam(':form_equ_heure_entrain', $form_equ_heure_entrain);
 
-        $rs_setEquipe = $o_updateEquipeAndEntrain->execute();
-        return $rs_setEquipe;
+            $rs_setEquipe = $o_updateEquipeAndEntrain->execute();
+            return $rs_setEquipe;
+        }
+    }
+
+
+    public function InsertEquipe($db, $dataEqu)
+    {
+        echo 'console.log(' . "InsertEquipe console" . ')';
+        $rqEqu = "INSERT INTO equipe 
+        (equi_id, equ_libelle, equ_categorie, equ_division, equ_jour_entrain, equ_heure_entrain) VALUES (
+        null, :equ_libelle, :equ_categorie, :equ_division, :equ_jour_entrain, :equ_heure_entrain);";
+        //$rqEqu .= " (null, :equ_libelle, :equ_categorie, :equ_division, :equ_jour_entrain, :equ_heure_entrain);";
+        $o_rqEqu_prep = $db->prepare($rqEqu);
+        $o_rqEqu_prep->execute($dataEqu);
+        var_dump(" et " . $db->prepare($rqEqu));
+        return $o_rqEqu_prep;
+    }
+
+
+    public function getEntraineursActifs($db)
+    {
+        $sql_entrain = "SELECT personne.per_id, personne.per_nom,personne.per_prenom FROM `personne`
+        INNER JOIN lien_per_fon_equ ON lien_per_fon_equ.lpfe_per_id=personne.per_id 
+        INNER JOIN fonction ON lien_per_fon_equ.lpfe_fon_id=fonction.fon_id
+        WHERE fonction.fon_libelle='Entraineur'";
+        $rs_entrain = $db->query($sql_entrain);
+        $tbNomEntrain = $rs_entrain->fetchAll(PDO::FETCH_ASSOC);
+        return $tbNomEntrain;
     }
 
     // public function setHeure($db,  $form_equ_heure_entrain, $id)
@@ -98,4 +146,10 @@ class EquipeBase
 
     //     $rs_setEquipe = $o_updateEquipeAndEntrain->execute();
     // }
+    //------------------------------
+    // $sql_In = "INSERT INTO equipe 
+    //         (equ_id, equ_libelle, equ_categorie, equ_division, equ_jour_entrain, equ_heure_entrain, equ_created_at) VALUES 
+    //         (null, 'zzzz', 'Junior', 'Nationale 1', 'Lundi- Mardi', '19h - 21h', NOW() );";
+    //         $rs_In = $db->query($sql_In);
+    //         return $rs_In;
 }
