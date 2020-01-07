@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (isset($_GET["mes"]))
 {
     if ($_GET["mes"] == "pasDeDroit")

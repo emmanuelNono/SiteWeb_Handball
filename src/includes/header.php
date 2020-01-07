@@ -1,9 +1,8 @@
 <header>
 
-<?php session_start(); ?>
     <!-- vérifie si l'utilisateur de la session est admin ou rédacteur pour faire apparaître la navbar Admin -->
     <?php
-    if ($_SESSION["admin"] == 1 || $_SESSION["redac"] == 1) {
+    if ((isset($_SESSION["admin"]) and ($_SESSION["admin"] == 1)) || (isset($_SESSION["redac"]) and ($_SESSION["redac"] == 1))) {
         include('navbarAdmin.php');
     }
     ?>
@@ -60,10 +59,10 @@
                             <a class="dropdown-item" href="../body/login.php">Accès administration</a>
                         </div>
                     </li>
+                </ul>
             </div>
         </nav>
 
-    </div>
     <!-- Permet de créer un espace "derrière" la navbar pour que le body ne soit pas caché -->
     <div id="spaceheader">
     </div>
