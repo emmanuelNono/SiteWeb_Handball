@@ -12,8 +12,8 @@ $tbListEquAct = $equipes->getEquipesActives($o_conn);
 include('../includes/head.php');
 include('../includes/header.php');
 ?>
-
-<h2>Calendrier et résultats de l'équipe <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] ?></h2>
+<a href="equipe_liste.php">Retour à la liste des équipes</a><br>
+<h2>Calendrier et résultats de l'équipe <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] ?></h2><br>
 <div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
     <script>
