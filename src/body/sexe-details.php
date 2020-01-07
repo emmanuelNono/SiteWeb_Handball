@@ -2,6 +2,7 @@
 // les includes
 require_once '../includes/Database.php';
 require_once '../class/SexeBase.php';
+require_once '../class/Sexe.php';
 
 // connexion à la base
 $o_pdo = new Database();
@@ -13,8 +14,9 @@ if ($_GET["mode"] == "modif"){
     $pb = new SexeBase();
     $sexe = $pb->getSexe($o_conn, $id);
     foreach ($sexe as $sex) {
-        $sex_id = $sex['sex_id'];
-        $sex_intitule = $sex['sex_intitule'];
+        $sexe1 = new Sexe($sex["sex_id"], $sex["sex_intitule"]);
+       // $sex_id = $sex['sex_id'];
+       //  $sex_intitule = $sex['sex_intitule'];
     }
 }
 else{
@@ -35,7 +37,7 @@ else{
     <table class="table table-striped">
         <tr>
             <th><label for="libelle">Intitulé</label></th>
-            <td><input type="text" name="intitule" id="intitule" value="<?php echo $sex_intitule ?>" class="form-control"></td>
+            <td><input type="text" name="intitule" id="intitule" value="<?php echo $sexe1->getIntitule() ?>" class="form-control"></td>
         </tr>
 
 
