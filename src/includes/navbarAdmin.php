@@ -13,10 +13,17 @@
                         <a class="nav-link" href="#">Club</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Equipes</a>
+                        <a class="nav-link" href="../body/equipe_liste.php">Equipes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galerie</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Galerie
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../body/photo-liste.php">Photos</a>
+                            <a class="dropdown-item" href="../body/album-liste.php">Albums</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../body/personne-liste.php">Gestion personnes</a>
