@@ -22,7 +22,7 @@
                         <a class="nav-link" href="../body/home.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Actualités</a>
+                        <a class="nav-link" href="../body/article-liste.php">Actualités</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

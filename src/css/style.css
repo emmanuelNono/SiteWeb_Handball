@@ -37,12 +37,45 @@
     text-shadow: 2px 2px 1px black;
 }
 
+.carousel-caption a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.carousel-caption a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.carousel-caption a:hover {
+    text-decoration: none;
+    color: wheat;
+}
+
 #iconResult {
     padding: 2rem;
 }
 
 #cardProchainsMatchs .nav-link {
     color: black;
+}
+
+/* Affichage des articles */
+
+.article-block{
+    margin-bottom: 50px;
+}
+
+.article-photo {
+    width: 400px;
+}
+
+.article-contenu {
+    display: inline;
+}
+
+.blockquote {
+    display: inline;
 }
 
 /* Gestion personne */
