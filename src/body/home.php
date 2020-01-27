@@ -38,7 +38,7 @@ include('../includes/header.php');
                         <?php $photo1 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[0]['art_photo_id']) ?>
                         <img src="../../resources/galerie/<?php echo $photo1[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href=article-liste.php>
+                            <a href=article.php>
                                 <h2 class="mb-0"><?php echo $derniersArticles[0]['art_titre'] ?></h2>
                             </a>
                         </div>
@@ -47,7 +47,7 @@ include('../includes/header.php');
                         <?php $photo2 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[1]['art_photo_id']) ?>
                         <img src="../../resources/galerie/<?php echo $photo2[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href=article-liste.php>
+                            <a href=article.php>
                                 <h2><?php echo $derniersArticles[1]['art_titre'] ?></h2>
                             </a>
                         </div>
@@ -56,7 +56,7 @@ include('../includes/header.php');
                         <?php $photo3 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[2]['art_photo_id']) ?>
                         <img src="../../resources/galerie/<?php echo $photo3[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href=article-liste.php>
+                            <a href=article.php>
                                 <h2 class="mb-0"><?php echo $derniersArticles[2]['art_titre'] ?></h2>
                             </a>
                         </div>
