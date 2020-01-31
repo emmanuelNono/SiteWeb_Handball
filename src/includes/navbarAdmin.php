@@ -25,11 +25,11 @@
                             <a class="dropdown-item" href="../body/album-liste.php">Albums</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown"">
+                    <li class="nav-item dropdown">
                         <a class="nav-link" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion personnes</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Personnes</a>
+                            <a class="dropdown-item" href="personne-liste.php">Personnes</a>
                             <a class="dropdown-item" href="sexe-liste.php">Sexe</a>
                         </div>
                     </li>
