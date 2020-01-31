@@ -22,21 +22,11 @@ include('../includes/header.php');
 <a href="personne-details.php?mode=nouveau">
     <button class="btn btn-warning" type="submit">Ajout d'un article</button>
 </a>
-<div class="table-responsive">
-    <table id="listePersonne" class="table table-striped table-bordered table-sm">
-        <thead>
-            <tr>
-                <td>Modifier</td>
-                <td>Supprimer</td>
-
-                <th scope="col"><label for="prenom">Prénom</label></th>
-                <th scope="col"><label for="nom">Nom</label></th>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <td>Modifier</td>
-            <td>Supprimer</td>
+            <th colspan="2">Action</td>
             <th><label for="titre">Titre</label></th>
             <th><label for="contenu">Contenu</label></th>
 
