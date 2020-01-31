@@ -9,18 +9,19 @@ include('../includes/header.php')
 </div>
 
 <br/>
+<div class="container col justify-content-center">
+  <div class="col justify-content-center">
+    <p>Lorem Elsass ipsum rhoncus baeckeoffe sed lacus munster Mauris chambon consectetur Salut bisamme eleifend geht's quam. tellus barapli hopla Salu bissame dolor semper Gal. id so Kabinetpapier varius dui turpis non DNA, Spätzle knack  flammekueche ullamcorper leo libero, réchime météor sed gewurztraminer knepfle rossbolla leverwurscht und hopla condimentum Chulia Roberstau bredele mänele amet, auctor, ac dignissim placerat tellus messti de Bischheim eget wurscht geïz Richard Schirmeck nullam schnaps bissame Pfourtz ! risus, sit Gal ! ornare Chulien blottkopf, nüdle Heineken ftomi! Verdammi sit leo Christkindelsmärik Oberschaeffolsheim ch'ai suspendisse vulputate hop gravida Huguette Morbi morbi gal senectus kuglopf kartoffelsalad adipiscing libero. hopla Oberschaeffolsheim tristique kougelhopf sagittis lotto-owe jetz gehts los rucksack aliquam habitant et quam, hopla id, s'guelt Coopé de Truchtersheim picon bière schneck Pellentesque purus Hans tchao bissame elementum mamsell ante yeuh. salu vielmols, hoplageiss Racing. sit schpeck porta amet commodo merci vielmols Carola turpis, Strasbourg Miss Dahlias mollis non Yo dû. ac elit libero, ornare pellentesque wie amet in, Wurschtsalad</p>
+  </div>
 
-<div class="col">
-
-<p>Lorem Salu bissame ! Wie geht's les samis ? Hans apporte moi une Wurschtsalad avec un picon bitte, s'il te plaît.
-  Voss ? Une Carola et du Melfor ? Yo dû, espèce de Knäckes, ch'ai dit un picon !</p>
-<p>Hopla vous savez que la mamsell Huguette, la miss Miss Dahlias du messti de Bischheim était au Christkindelsmärik en compagnie de Richard Schirmeck (celui qui a un blottkopf), le mari de Chulia Roberstau, qui lui trempait sa Nüdle dans sa Schneck ! Yo dû, Pfourtz ! Ch'espère qu'ils avaient du Kabinetpapier, Gal !</p>
-<p>Yoo ch'ai lu dans les DNA que le Racing a encore perdu contre Oberschaeffolsheim. Verdammi et moi ch'avais donc parié deux knacks et une flammekueche. Ah so ? T'inquiète, ch'ai ramené du schpeck, du chambon, un kuglopf et du schnaps dans mon rucksack. Allez, s'guelt ! Wotch a kofee avec ton bibalaekaess et ta wurscht ? Yeuh non che suis au réchime, je ne mange plus que des Grumbeere light et che fais de la chym avec Chulien. Tiens, un rottznoz sur le comptoir.</p>
-<p>Tu restes pour le lotto-owe ce soir, y'a baeckeoffe ? Yeuh non, merci vielmols mais che dois partir à la Coopé de Truchtersheim acheter des mänele et des rossbolla pour les gamins. Hopla tchao bissame ! Consectetur adipiscing elit</p>
-
-<img src="../../resources/galerie/Choucroute.jpg" class=""/>
-
+  <div class="container col justify-content-center">
+    <img src="../../resources/galerie/Choucroute.jpg" class="img-sponsor"/>
+    <img src="../../resources/galerie/Bretzel.jpg" class="img-sponsor"/>
+    <img src="../../resources/galerie/Cigognes.jpg" class="img-sponsor"/>
+  </div>
 </div>
+
+
 <br/>
 
 <?php
