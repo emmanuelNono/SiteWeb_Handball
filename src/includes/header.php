@@ -2,7 +2,6 @@
 
     <!-- vérifie si l'utilisateur de la session est admin ou rédacteur pour faire apparaître la navbar Admin -->
     <?php
-    echo $_SESSION["admin"];
     if ((isset($_SESSION["admin"]) and ($_SESSION["admin"] == 1)) || (isset($_SESSION["redac"]) and ($_SESSION["redac"] == 1))) {
         include('navbarAdmin.php');
     }
@@ -55,8 +54,8 @@
                             Contact
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Nous contacter</a>
-                            <a class="dropdown-item" href="#">À propos</a>
+                            <a class="dropdown-item" href="../body/contact.php">Nous contacter</a>
+                            <a class="dropdown-item" href="../body/apropos.php">À propos</a>
                             <a class="dropdown-item" href="../body/login.php">Accès administration</a>
                         </div>
                     </li>
