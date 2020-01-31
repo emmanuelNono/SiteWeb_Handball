@@ -55,7 +55,7 @@
                             Contact
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Nous contacter</a>
+                            <a class="dropdown-item" href="../body/contact.php">Nous contacter</a>
                             <a class="dropdown-item" href="#">À propos</a>
                             <a class="dropdown-item" href="../body/login.php">Accès administration</a>
                         </div>
