@@ -6,7 +6,7 @@ class ArticleBase
     // Récupère tous les articles qui ne sont pas supprimés en les classant du plus récent au plus vieux (deleted_at)
     public function getArticlesActifs($db)
     {
-        $sql_aa = "SELECT * FROM article where art_deleted_at is null ORDER BY art_id DESC";
+        $sql_aa = "SELECT * FROM article inner join personne on article.art_auteur_id = personne.per_id where art_deleted_at is null ORDER BY art_id DESC";
         $rs_aa = $db->query($sql_aa);
         //$articlesActifs = $rs_aa->fetchAll();
         return $rs_aa;
