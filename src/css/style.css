@@ -1,7 +1,7 @@
 /* HEADER */
 
 #navbarAdmin {
-  margin-top: 90px;
+  margin-top: 80px;
   background-color: #ff9307;
 }
 
@@ -38,18 +38,18 @@
 }
 
 .carousel-caption a:link {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .carousel-caption a:visited {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .carousel-caption a:hover {
-    text-decoration: none;
-    color: wheat;
+  text-decoration: none;
+  color: wheat;
 }
 
 #iconResult {
@@ -60,22 +60,28 @@
   color: black;
 }
 
+/* Sponsors */
+
+.img-sponsor {
+  height: 10rem;
+}
+
 /* Affichage des articles */
 
-.article-block{
-    margin-bottom: 50px;
+.article-block {
+  margin-bottom: 50px;
 }
 
 .article-photo {
-    width: 400px;
+  width: 400px;
 }
 
 .article-contenu {
-    display: inline;
+  display: inline;
 }
 
 .blockquote {
-    display: inline;
+  display: inline;
 }
 
 /* Gestion personne */

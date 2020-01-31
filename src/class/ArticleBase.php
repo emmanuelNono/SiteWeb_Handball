@@ -8,8 +8,8 @@ class ArticleBase
     {
         $sql_aa = "SELECT * FROM article where art_deleted_at is null ORDER BY art_id DESC";
         $rs_aa = $db->query($sql_aa);
-        $articlesActifs = $rs_aa->fetchAll();
-        return $articlesActifs;
+        //$articlesActifs = $rs_aa->fetchAll();
+        return $rs_aa;
     }
 
     // Récupère toutes les infos d'un article
