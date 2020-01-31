@@ -1,7 +1,7 @@
 /* HEADER */
 
 #navbarAdmin{
-    margin-top: 90px;
+    margin-top: 80px;
     background-color: #ff9307;
 }
 
@@ -58,6 +58,12 @@
 
 #cardProchainsMatchs .nav-link {
     color: black;
+}
+
+/* Sponsors */
+
+.img-sponsor {
+    height: 10rem;
 }
 
 /* Affichage des articles */
