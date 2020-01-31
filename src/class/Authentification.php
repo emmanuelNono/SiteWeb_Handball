@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 class Authentification
 {
     public function verificationUtilisateur($db, $user, $mdp)

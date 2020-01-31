@@ -37,6 +37,7 @@ else {
         }
 
         if ($util[0]["per_admin"] ==1 or $util[0]["per_redac"]==1){
+            //echo $_SESSION["admin"];
             header("location:../body/home.php");
         }
         else {

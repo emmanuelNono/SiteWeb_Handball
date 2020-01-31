@@ -2,6 +2,7 @@
 
     <!-- vérifie si l'utilisateur de la session est admin ou rédacteur pour faire apparaître la navbar Admin -->
     <?php
+    echo $_SESSION["admin"];
     if ((isset($_SESSION["admin"]) and ($_SESSION["admin"] == 1)) || (isset($_SESSION["redac"]) and ($_SESSION["redac"] == 1))) {
         include('navbarAdmin.php');
     }
@@ -22,7 +23,7 @@
                         <a class="nav-link" href="../body/home.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Actualités</a>
+                        <a class="nav-link" href="../body/article.php">Actualités</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

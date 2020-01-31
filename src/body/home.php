@@ -1,5 +1,4 @@
 <?php
-
 require_once '../includes/Database.php';
 require_once '../class/ArticleBase.php';
 
@@ -19,8 +18,7 @@ include('../includes/header.php');
     <!-- 
     <h2><?php // echo "id session = ".session_id() 
         ?></h2>
-    <h2><?php // echo "admin = ".$_SESSION["admin"] 
-        ?></h2>
+    <h2><?php echo "admin = " . $_SESSION["admin"] ?></h2>
     <h2><?php // echo "redac = ".$_SESSION["redac"] 
         ?></h2>
     -->
@@ -39,7 +37,9 @@ include('../includes/header.php');
                         <img src="../../resources/galerie/<?php echo $photo1[0]['pho_nom'] ?>" class="img-fluid tales"
                             alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h2 class="mb-0"><?php echo $derniersArticles[0]['art_titre'] ?></h2>
+                            <a href=article.php>
+                                <h2 class="mb-0"><?php echo $derniersArticles[0]['art_titre'] ?></h2>
+                            </a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -47,7 +47,9 @@ include('../includes/header.php');
                         <img src="../../resources/galerie/<?php echo $photo2[0]['pho_nom'] ?>" class="img-fluid tales"
                             alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h2><?php echo $derniersArticles[1]['art_titre'] ?></h2>
+                            <a href=article.php>
+                                <h2><?php echo $derniersArticles[1]['art_titre'] ?></h2>
+                            </a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -55,7 +57,9 @@ include('../includes/header.php');
                         <img src="../../resources/galerie/<?php echo $photo3[0]['pho_nom'] ?>" class="img-fluid tales"
                             alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h2 class="mb-0"><?php echo $derniersArticles[2]['art_titre'] ?></h2>
+                            <a href=article.php>
+                                <h2 class="mb-0"><?php echo $derniersArticles[2]['art_titre'] ?></h2>
+                            </a>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselArticles" role="button" data-slide="prev">
@@ -197,13 +201,16 @@ include('../includes/header.php');
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="...">
+                        <a href="#"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="../../resources/img/partLogo-Leclerc.png" class="img-fluid d-block w-100" alt="...">
+                        <a href="#"><img src="../../resources/img/partLogo-Leclerc.png" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="...">
+                        <a href="#"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselSponsors" role="button" data-slide="prev">
@@ -225,13 +232,16 @@ include('../includes/header.php');
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../../resources/galerie/1.jpg" class="img-fluid d-block w-100" alt="...">
+                        <a href="galerie.php"><img src="../../resources/galerie/1.jpg" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="../../resources/galerie/5.jpg" class="img-fluid d-block w-100" alt="...">
+                        <a href="galerie.php"><img src="../../resources/galerie/5.jpg" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="../../resources/galerie/7.jpg" class="img-fluid d-block w-100" alt="...">
+                        <a href="galerie.php"><img src="../../resources/galerie/7.jpg" class="img-fluid d-block w-100"
+                                alt="..."></a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselGallerie" role="button" data-slide="prev">

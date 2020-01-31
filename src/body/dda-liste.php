@@ -2,44 +2,44 @@
 
 // les includes
 require_once '../includes/Database.php';
-require_once '../class/AlbumBase.php';
+require_once '../class/DDABase.php';
 
 // connexion à la base
 $o_pdo = new Database();
 $o_conn = $o_pdo->makeConnect();
 
 // on va chercher la liste des personnes
-$o_alb = new AlbumBase();
-$albums = $o_alb->getAlbumActifs($o_conn);
+$o_dda = new DdaBase();
+$dda = $o_dda->getDdaActifs($o_conn);
 
-$alb = $albums->fetchall();
+$dd = $dda->fetchall();
 
-include('../includes/head.php');
-include('../includes/header.php');
+
 
 ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <h2>Administration des albums : Listes des albums</h2>
-    <a href="album-details.php?mode=ajout">
-        <button type="submit">Ajout d'un album</button>
+    <h2>Administration des demandes d'accompagnants : Listes des demandes</h2>
+    <a href="dda-details.php?mode=ajout">
+        <button type="submit">Ajout d'une demande d'accompagnant</button>
     </a>
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>Modifier</td>
-            <td>Supprimer</td>
-
-            <th><label for="prenom">libelle</label></th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+            <th>libelle</th>
+            <th>Actif ?</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($alb as $a){ ?>
+        <?php foreach ($dd as $d){ ?>
             <tr>
-                <td><a href="album-details.php?mode=modif&id_alb=<?php echo $a['alb_id']?>">M</a></td>
-                <td><a href="../traitements/album-suppression.php?&id_alb=<?php echo $a['alb_id']?>">S</td>
-                <td><?php echo $a["alb_libelle"] ?></td>
+                <td><a href="dda-details.php?mode=modif&id_dda=<?php echo $d['dda_id']?>">M</a></td>
+                <td><a href="../traitements/dda-suppression.php?&id_dda=<?php echo $d['dda_id']?>">S</td>
+                <td><?php echo $d["dda_lib"] ?></td>
+                <td><input type="checkbox" <?php if ($d["dda_actif"] == "1") echo "checked"?> ></td> 
 
             </tr>
         <?php } ?>
@@ -48,5 +48,5 @@ include('../includes/header.php');
 <?php
 
 $o_conn = null;
-$albums = null;
+$o_dda = null;
 ?>
