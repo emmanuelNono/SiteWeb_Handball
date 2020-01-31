@@ -1,7 +1,7 @@
 <footer>
     <div class="row justify-content-center">
         <p>
-            <b>Information importante du footer !</b>
+            <b>Site du club de handball de Kingersheim - ZeNumerix</b>
         </p>
     </div>
 </footer>
