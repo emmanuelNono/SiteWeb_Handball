@@ -81,7 +81,13 @@ CREATE TABLE `article` (
 
 INSERT INTO `article` (`art_id`, `art_titre`, `art_contenu`, `art_auteur_id`, `art_photo_id`, `art_actif`, `art_created_at`, `art_updated_at`, `art_deleted_at`) VALUES
 (1, 'Bienvenue', 'Ceci est ma première news', 1, 1, 1, '2019-12-13 19:22:57', NULL, NULL),
-(2, 'Premier match', 'Premier match de notre équipe favorite pour cette saison.', 2, 2, 1, '2019-12-17 00:00:00', NULL, NULL);
+(2, 'Premier match', 'Premier match de notre équipe favorite pour cette saison.', 2, 2, 1, '2019-12-17 00:00:00', NULL, NULL),
+(3, 'Victoire en championnat', 'Nous avons gagné le championnat avec brio !', 2, 3, 1, '2019-12-29 20:14:12', NULL, NULL),
+(4, 'Rencontre festive', "Venez nous rejoindre pour la rencontre festive de fin d'année !", 3, 4, 1, '2019-12-30 19:14:05', NULL, NULL),
+(5, 'Nous avons tenu ferme', "C'est une défaite pour nous, mais nous ne baissons pas les bras !", 4, 5, 1, '2020-01-02 17:34:22', NULL, NULL),
+(6, 'Liliane et sa passion du hand', "Je crois que j'ai toujours adoré jouer avec des ballons...", 6, 6, 1, '2020-01-04 09:27:42', NULL, NULL),
+(7, "Les moins de 11 ans champions", "Malgré leur jeune âge... elles n'ont pas manqué de se faire remarquer...", 5, 7, 1, '2020-01-05 10:35:58', NULL, NULL),
+(8, 'Reprises de la musculation', 'Les cours de musculation vont enfin pouvoir reprendre cette semaine !', 5, 8, 1, '2020-01-10 15:42:31', NULL, NULL);
 
 -- --------------------------------------------------------
 
