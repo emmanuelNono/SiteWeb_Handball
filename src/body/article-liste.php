@@ -18,7 +18,7 @@ include('../includes/header.php');
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<h1>Administration : Liste des personnes</h1>
+<h1>Administration : Liste des articles</h1>
 <a href="personne-details.php?mode=nouveau">
     <button class="btn btn-warning" type="submit">Ajout d'un article</button>
 </a>
@@ -54,7 +54,7 @@ include('../includes/header.php');
         <td><a href="../traitements/article-suppression.php?id=<?php echo $p['per_id']?>">Supprimer</td>
         <td><?php echo $a["art_titre"]?></td>
         <td><?php echo $a["art_contenu"] ?></td>
-        <td><?php echo $a["art_auteur_id"] ?></td>
+        <td><?php echo $a["per_prenom"] . " " . $a["per_nom"] ?></td>
         <td><?php echo $a["art_photo_id"]?></td>
         <td>
             <input type="checkbox" name="actif" value="actif" <?php if ($a["art_actif"] ==1) echo "checked" ?> >
