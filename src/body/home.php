@@ -17,11 +17,14 @@ include('../includes/header.php');
 <div class="container container-home">
 
     <!-- 
-    <h2><?php // echo "id session = ".session_id() ?></h2>
-    <h2><?php // echo "admin = ".$_SESSION["admin"] ?></h2>
-    <h2><?php // echo "redac = ".$_SESSION["redac"] ?></h2>
+    <h2><?php // echo "id session = ".session_id() 
+        ?></h2>
+    <h2><?php // echo "admin = ".$_SESSION["admin"] 
+        ?></h2>
+    <h2><?php // echo "redac = ".$_SESSION["redac"] 
+        ?></h2>
     -->
-    
+
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12">
             <div id="carouselArticles" class="carousel slide" data-ride="carousel">
@@ -33,21 +36,24 @@ include('../includes/header.php');
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <?php $photo1 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[0]['art_photo_id']) ?>
-                        <img src="../../resources/galerie/<?php echo $photo1[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <img src="../../resources/galerie/<?php echo $photo1[0]['pho_nom'] ?>" class="img-fluid tales"
+                            alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2 class="mb-0"><?php echo $derniersArticles[0]['art_titre'] ?></h2>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <?php $photo2 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[1]['art_photo_id']) ?>
-                        <img src="../../resources/galerie/<?php echo $photo2[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <img src="../../resources/galerie/<?php echo $photo2[0]['pho_nom'] ?>" class="img-fluid tales"
+                            alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2><?php echo $derniersArticles[1]['art_titre'] ?></h2>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <?php $photo3 = $articles->getPhotoDeArticle($o_conn, $derniersArticles[2]['art_photo_id']) ?>
-                        <img src="../../resources/galerie/<?php echo $photo3[0]['pho_nom'] ?>" class="img-fluid tales" alt="...">
+                        <img src="../../resources/galerie/<?php echo $photo3[0]['pho_nom'] ?>" class="img-fluid tales"
+                            alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h2 class="mb-0"><?php echo $derniersArticles[2]['art_titre'] ?></h2>
                         </div>
@@ -70,7 +76,8 @@ include('../includes/header.php');
 <div class="container container-home">
     <div class="row justify-content-center">
         <div class="card text-center" style="width: 20rem;">
-            <a href="club.php"><img id="iconResult" src="../../resources/img/trophy.png" class="card-img-top img-fluid" alt="Résultats"></a>
+            <a href="club.php"><img id="iconResult" src="../../resources/img/trophy.png" class="card-img-top img-fluid"
+                    alt="Résultats"></a>
             <div class="card-body">
                 <a href="club.php" class="btn btn-warning">Accèder aux résultats du club</a>
             </div>
@@ -80,76 +87,95 @@ include('../includes/header.php');
                 <div class="card-header">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active bg-warning" id="SENIORF1-tab" data-toggle="tab" href="#SENIORF1" role="tab" aria-controls="SENIORF1" aria-selected="true">SEN.F1</a>
+                            <a class="nav-link active bg-warning" id="SENIORF1-tab" data-toggle="tab" href="#SENIORF1"
+                                role="tab" aria-controls="SENIORF1" aria-selected="true">SEN.F1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bg-warning" id="SENIORF2-tab" data-toggle="tab" href="#SENIORF2" role="tab" aria-controls="SENIORF2" aria-selected="false">SEN.F2</a>
+                            <a class="nav-link bg-warning" id="SENIORF2-tab" data-toggle="tab" href="#SENIORF2"
+                                role="tab" aria-controls="SENIORF2" aria-selected="false">SEN.F2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bg-warning" id="SENIORF3-tab" data-toggle="tab" href="#SENIORF3" role="tab" aria-controls="SENIORF3" aria-selected="false">SEN.F3</a>
+                            <a class="nav-link bg-warning" id="SENIORF3-tab" data-toggle="tab" href="#SENIORF3"
+                                role="tab" aria-controls="SENIORF3" aria-selected="false">SEN.F3</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="tabProchainsMatchs">
-                        <div class="tab-pane fade show active" id="SENIORF1" role="tabpanel" aria-labelledby="SENIORF1-tab">
+                        <div class="tab-pane fade show active" id="SENIORF1" role="tabpanel"
+                            aria-labelledby="SENIORF1-tab">
                             <div class="card-body">
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js">
+                                </script>
                                 <script>
-                                    if (!window._rsz) {
-                                        window._rsz = function() {
-                                            var i = iFrameResize({
-                                                checkOrigin: false,
-                                                interval: 100
-                                            });
-                                        };
-                                        if (document.readyState != "loading") {
-                                            _rsz()
-                                        } else {
-                                            document.addEventListener("DOMContentLoaded", _rsz)
-                                        }
+                                if (!window._rsz) {
+                                    window._rsz = function() {
+                                        var i = iFrameResize({
+                                            checkOrigin: false,
+                                            interval: 100
+                                        });
+                                    };
+                                    if (document.readyState != "loading") {
+                                        _rsz()
+                                    } else {
+                                        document.addEventListener("DOMContentLoaded", _rsz)
                                     }
-                                </script><iframe id="5df8c6a22d67f30a1bd35fef" src="https://scorenco.com/widget/5df8c6a22d67f30a1bd35fef/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+                                }
+                                </script><iframe id="5df8c6a22d67f30a1bd35fef"
+                                    src="https://scorenco.com/widget/5df8c6a22d67f30a1bd35fef/?auto_height=true"
+                                    style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;"
+                                    scrolling="no"></iframe>
                                 <a href="#" class="btn btn-warning">Afficher le calendrier de l'équipe</a>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="SENIORF2" role="tabpanel" aria-labelledby="SENIORF2-tab">
                             <div class="card-body">
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js">
+                                </script>
                                 <script>
-                                    if (!window._rsz) {
-                                        window._rsz = function() {
-                                            var i = iFrameResize({
-                                                checkOrigin: false,
-                                                interval: 100
-                                            });
-                                        };
-                                        if (document.readyState != "loading") {
-                                            _rsz()
-                                        } else {
-                                            document.addEventListener("DOMContentLoaded", _rsz)
-                                        }
+                                if (!window._rsz) {
+                                    window._rsz = function() {
+                                        var i = iFrameResize({
+                                            checkOrigin: false,
+                                            interval: 100
+                                        });
+                                    };
+                                    if (document.readyState != "loading") {
+                                        _rsz()
+                                    } else {
+                                        document.addEventListener("DOMContentLoaded", _rsz)
                                     }
-                                </script><iframe id="5df8d4b77de2570a17605c82" src="https://scorenco.com/widget/5df8d4b77de2570a17605c82/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+                                }
+                                </script><iframe id="5df8d4b77de2570a17605c82"
+                                    src="https://scorenco.com/widget/5df8d4b77de2570a17605c82/?auto_height=true"
+                                    style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;"
+                                    scrolling="no"></iframe>
                                 <a href="#" class="btn btn-warning">Afficher le calendrier de l'équipe</a>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="SENIORF3" role="tabpanel" aria-labelledby="SENIORF3-tab">
                             <div class="card-body">
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js">
+                                </script>
                                 <script>
-                                    if (!window._rsz) {
-                                        window._rsz = function() {
-                                            var i = iFrameResize({
-                                                checkOrigin: false,
-                                                interval: 100
-                                            });
-                                        };
-                                        if (document.readyState != "loading") {
-                                            _rsz()
-                                        } else {
-                                            document.addEventListener("DOMContentLoaded", _rsz)
-                                        }
+                                if (!window._rsz) {
+                                    window._rsz = function() {
+                                        var i = iFrameResize({
+                                            checkOrigin: false,
+                                            interval: 100
+                                        });
+                                    };
+                                    if (document.readyState != "loading") {
+                                        _rsz()
+                                    } else {
+                                        document.addEventListener("DOMContentLoaded", _rsz)
                                     }
-                                </script><iframe id="5df8d5fd0d02f30a1ca00d35" src="https://scorenco.com/widget/5df8d5fd0d02f30a1ca00d35/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+                                }
+                                </script><iframe id="5df8d5fd0d02f30a1ca00d35"
+                                    src="https://scorenco.com/widget/5df8d5fd0d02f30a1ca00d35/?auto_height=true"
+                                    style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;"
+                                    scrolling="no"></iframe>
                                 <a href="#" class="btn btn-warning">Afficher le calendrier de l'équipe</a>
                             </div>
                         </div>
@@ -222,5 +248,5 @@ include('../includes/header.php');
 </div>
 
 <?php
-                                                            include('../includes/footer.php');
+include('../includes/footer.php');
 ?>
