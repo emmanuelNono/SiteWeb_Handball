@@ -8,10 +8,20 @@ include('../includes/header.php')
     <h1>Sponsors de notre club</h1>
 </div>
 
-<br/>
+<br />
+
+<div class="row justify-content-center">
+    <div class="col">
+        <img src="..\..\resources\img\partLogo-Apple.png" alt="" class="img-sponsor">
+        <img src="..\..\resources\img\partLogo-Google.png" alt="" class="img-sponsor">
+        <img src="..\..\resources\img\partLogo-Leclerc.png" alt="" class="img-sponsor">
+        <img src="..\..\resources\img\partLogo-CM.png" alt="" class="img-sponsor">
+        <img src="..\..\resources\img\partLogo-Emirates.png" alt="" class="img-sponsor">
+    </div>
+</div>
 
 
-<br/>
+<br />
 
 <?php
 include('../includes/footer.php');

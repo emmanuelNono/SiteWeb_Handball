@@ -60,6 +60,12 @@
     color: black;
 }
 
+/* Sponsors */
+
+.img-sponsor {
+    height: 10rem;
+}
+
 /* Affichage des articles */
 
 .article-block{
