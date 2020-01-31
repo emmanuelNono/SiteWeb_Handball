@@ -15,8 +15,18 @@
             </p>
             <a class="btn btn-warning"
                 href="equipe_details.php?action=show&idequ=<?php echo $tbListEquActAndEntrain[$incrCard]['equ_id']; ?>">Détails</a>
+            <?php
+            //echo $_SESSION["admin"];
+            if ((isset($_SESSION["admin"]) and ($_SESSION["admin"] == 1)) || (isset($_SESSION["redac"]) and ($_SESSION["redac"] == 1))) {
+                //include('navbarAdmin.php'); 
+            ?>
             <a class="btn btn-success"
                 href="equipe_add_up.php?action=update&idequ=<?php echo $tbListEquActAndEntrain[$incrCard]['equ_id']; ?>">Manage</a>
+            <?php }
+
+            ?>
+
+
         </div>
     </div>
 </div>
