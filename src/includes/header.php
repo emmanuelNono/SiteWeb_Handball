@@ -31,9 +31,9 @@
                             Club
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Historique</a>
-                            <a class="dropdown-item" href="#">Organigrame</a>
-                            <a class="dropdown-item" href="#">Sponsors</a>
+                            <a class="dropdown-item" href="../body/historique.php">Historique</a>
+                            <a class="dropdown-item" href="../body/organigrame.php">Organigrame</a>
+                            <a class="dropdown-item" href="../body/sponsor.php">Sponsors</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
