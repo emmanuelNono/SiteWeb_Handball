@@ -180,7 +180,7 @@ if (isset($_POST['validation']) && $_POST['formequid'] == 'new' && $_GET['action
                             placeholder="Jour entrainement" />
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="formlabelheureentrain">Heures dd&#39;entra&icirc;nement</label>
+                        <label for="formlabelheureentrain">Heures d&#39;entra&icirc;nement</label>
                         <input type="text" id="formheureentrain" class="form-control"
                             value="<?php echo $equ_heure_entrain ?>" name="formheureentrain"
                             placeholder="Heure entrainement" />
