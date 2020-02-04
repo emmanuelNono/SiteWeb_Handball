@@ -9,6 +9,8 @@ $o_conn = $o_pdo->makeConnect();
 $equipes = new EquipeBase();
 $tbListEquAct = $equipes->getEquipesActives($o_conn);
 
+
+// ajouter equipe U15-F2
 include('../includes/head.php');
 include('../includes/header.php');
 ?>
@@ -17,10 +19,14 @@ include('../includes/header.php');
             style="width:50px;height:30px" />&ensp;Liste des équipes</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 
 </div>
-<h2>Calendrier et résultats de l'équipe
-    <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] . " (" . $tbListEquAct[$_GET["idequ"] - 1]['equ_division'] . " )"  ?>
-    <a href="equipe_liste.php"><img src="../../resources/img/img_button/ranking.png" alt="Classement"
-            title="Classement de l'équipe" style="width:100px;height:75px" /></a>
+<div class="container">
+    <div class="row justify-content-center">
+        <h2>Calendrier et résultats de l'équipe
+            <?php echo $tbListEquAct[$_GET["idequ"] - 1]['equ_libelle'] . " (" . $tbListEquAct[$_GET["idequ"] - 1]['equ_division'] . " )"  ?>
+    </div>
+</div>
+
+
 </h2><br>
 <div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
@@ -42,3 +48,7 @@ include('../includes/header.php');
         src="https://scorenco.com/widget/<?php echo $id_widget = $tbListEquAct[$_GET["idequ"] - 1]['equ_widget_id']; ?>/?auto_height=true"
         style="display: block; width: 55%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
 </div>
+
+<?php
+include('../includes/footer.php');
+?>

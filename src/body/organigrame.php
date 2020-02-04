@@ -5,7 +5,7 @@ include('../includes/header.php')
 
 
 <div class="row justify-content-center">
-    <h1 style="color: orange ">Organigrame de notre club</h1>
+    <h1>Organigrame de notre club</h1>
 </div>
 
 <br />

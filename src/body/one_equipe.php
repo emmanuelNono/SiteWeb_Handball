@@ -1,6 +1,7 @@
 <div class="col-sm-12 col-md-4 col-lg-3">
     <div class="card" style="margin-bottom: 10px">
-        <img class="card-img-top" src="../../resources/galerie/<?php echo $incrCard ?>.jpg" alt="">
+        <img class="card-img-top" style="height: 150px" src="../../resources/galerie/<?php echo $incrCard ?>.jpg"
+            alt="">
         <h4 class="car-title">
             <?php echo $tbListEquActAndEntrain[$incrCard]['equ_libelle'] . "<br>" . " (" . $tbListEquActAndEntrain[$incrCard]['equ_division'] . " )" ?>
         </h4>
