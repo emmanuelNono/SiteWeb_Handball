@@ -15,8 +15,8 @@ include('../includes/header.php')
             </div>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="contenumessage">Votre message</label>
+            <textarea class="form-control" id="contenumessage" rows="3"></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-warning">Envoyer</button>

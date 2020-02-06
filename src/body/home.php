@@ -176,13 +176,13 @@ include('../includes/header.php');
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <a href="#"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="..."></a>
+                    <a href="sponsor.php"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                    <a href="#"><img src="../../resources/img/partLogo-Leclerc.png" class="img-fluid d-block w-100" alt="..."></a>
+                    <a href="sponsor.php"><img src="../../resources/img/partLogo-Leclerc.png" class="img-fluid d-block w-100" alt="..."></a>
                     </div>
                     <div class="carousel-item">
-                    <a href="#"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="..."></a>
+                    <a href="sponsor.php"><img src="../../resources/img/partLogo-CM.png" class="img-fluid d-block w-100" alt="..."></a>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselSponsors" role="button" data-slide="prev">
