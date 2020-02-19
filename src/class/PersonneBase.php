@@ -4,7 +4,9 @@
 class PersonneBase
 {
     public function getPersonnesActives($db){
-        $sql_pa = "SELECT * FROM personne where per_deleted_at is null";
+        $sql_pa = "SELECT * FROM personne ";
+        $sql_pa .= " inner join sexe on personne.per_sexe = sexe.sex_id ";
+        $sql_pa .= " where per_deleted_at is null";
         $rs_pa = $db->query($sql_pa);
         return $rs_pa;
     }

@@ -10,6 +10,7 @@ class Database
 
     // paramètres passée : valeur par défaut
     function __construct($base = "bd_hbck", $user = "hbck", $password = "hbck-serfa#67", $host = "127.0.0.1")
+
     {
         $this->baseName = $base;
         $this->baseUser = $user;
