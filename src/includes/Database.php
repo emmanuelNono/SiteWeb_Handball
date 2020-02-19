@@ -9,7 +9,7 @@ class Database
     var $connection = "";
 
     // paramètres passée : valeur par défaut
-    function __construct($base = "bd_hbck", $user = "hbck", $password = "hbck-serfa#67", $host = "localhost")
+    function __construct($base = "bd_hbck", $user = "hbck", $password = "hbck-serfa#67", $host = "127.0.0.1")
     {
         $this->baseName = $base;
         $this->baseUser = $user;
@@ -20,7 +20,7 @@ class Database
     // stockage de la connexion
     function makeConnect()
     {
-        $dsn = 'mysql:host=localhost;dbname=' . $this->baseName . ";charset=UTF8";
+        $dsn = 'mysql:host=127.0.0.1;dbname=' . $this->baseName . ";charset=UTF8";
         try {
             $this->connection = new PDO($dsn, $this->baseUser, $this->userPassW);
         } catch (PDOException $e) {
